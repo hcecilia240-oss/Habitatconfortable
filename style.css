@@ -1,0 +1,1259 @@
+/* RESET GENERAL Y VARIABLES */
+:root {
+    --color-fondo-header: #242424; /* El color exacto de tu logo */
+    --color-acento: #25d366;      /* El verde de tus botones */
+    --color-texto: #ffffff;        /* Blanco para textos sobre oscuro */
+    --font-principal: 'Poppins', sans-serif;
+}
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-principal);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    /* AQUÍ ESTÁ EL CAMBIO: */
+    background-color:#444546 ; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+    display: block;
+    filter: brightness(1.1);
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.03);
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 25px;
+    font-weight: 400;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #25d366;
+}
+
+/* Botón de WhatsApp en el menú */
+.btn-nav-wa {
+    background-color: #25d366;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.btn-nav-wa:hover {
+    background-color: #20ba5a;
+}
+
+/* SECCIÓN PORTADA (HERO) */
+.hero {
+    height: 85vh;
+    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.hero-content p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.btn-main-wa {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #25d366;
+    color: white;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-main-wa:hover {
+    background-color: #20ba5a;
+    transform: translateY(-3px);
+}
+
+/* ALINEACIÓN PROFESIONAL PARA LOS ICONOS DE WHATSAPP */
+.btn-nav-wa i, 
+.btn-main-wa i {
+    margin-right: 8px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.btn-nav-wa, 
+.btn-main-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SECCIÓN POR QUÉ ELEGIRNOS */
+.features-section {
+    padding: 80px 8%;
+    background-color: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #222;
+    font-weight: 700;
+}
+
+.section-title h2 span {
+    color: #4a5568;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #edf2f7;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.icon-box {
+    font-size: 28px;
+    color: #4a5568;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+}
+
+.feature-card:hover .icon-box {
+    transform: scale(1.1);
+    color: #25d366;
+}
+
+.highlighted-card {
+    background-color: #4a5568;
+    border-color: #4a5568;
+}
+
+.highlighted-card h3, 
+.highlighted-card p, 
+.highlighted-card .icon-box {
+    color: #ffffff;
+}
+
+.highlighted-card:hover {
+    background-color: #2d3748;
+}
+
+.highlighted-card:hover .icon-box {
+    color: #25d366;
+}
+
+/* SECCIÓN QUIÉNES SOMOS */
+
+.about-section {
+    padding: 80px 8%;
+    background-color: #f8f9fa;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text .subtitle {
+    color: #25d366;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about-text p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.philosophy-box {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.philosophy-box i {
+    font-size: 30px;
+    color: rgba(37, 211, 102, 0.3);
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.philosophy-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #25d366;
+}
+
+.philosophy-box p {
+    color: #e2e8f0;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.about-corporate {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.corp-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #4a5568;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s;
+}
+
+.corp-card:hover {
+    transform: translateX(5px);
+}
+
+.corp-card h3 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.corp-card h3 i {
+    color: #4a5568;
+}
+
+.corp-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.values-box {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.values-box h3 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.values-box h3 i {
+    color: #4a5568;
+}
+
+.values-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.value-tag {
+    background-color: #edf2f7;
+    color: #4a5568;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: help;
+    transition: all 0.3s;
+}
+
+.value-tag:hover {
+    background-color: #25d366;
+    color: #ffffff;
+}
+
+/* SECCIÓN QUIÉNES SOMOS CON IMAGEN21 */
+.about-section {
+    /* 1. Aplicamos la imagen de fondo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/imagen24.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    /* 2. Padding para que el contenido no quede pegado a los bordes */
+    padding: 100px 8%;
+    
+    /* 3. Color de texto para que contraste con el fondo oscuro */
+    color: #ffffff;
+}
+
+/* 4. Aseguramos que los textos de esta sección sean blancos */
+.about-section .about-text h2, 
+.about-section .about-text p, 
+.about-section .subtitle {
+    color: #ffffff !important;
+}
+
+/* 5. Ajuste para que las tarjetas corporativas se lean bien sobre la imagen */
+.about-section .corp-card, 
+.about-section .values-box {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo casi blanco para tarjetas */
+    color: #333333; /* Texto oscuro dentro de tarjetas */
+}
+
+/* 6. Ajuste de títulos dentro de las tarjetas */
+.about-section .corp-card h3, 
+.about-section .values-box h3 {
+    color: #222222 !important;
+}
+
+/* BOTÓN FLOTANTE INTERACTIVO */
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-fixed:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-fixed {
+    animation: pulse-wa 2s infinite;
+}
+
+/* ===================================================
+   REGLAS DE ESTILOS DEFINITIVAS PARA LA GALERÍA SWIPER
+   =================================================== */
+
+.gallery-section {
+    padding: 80px 8%;
+    background-color: #ffffff;
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+
+.swiper.mySwiper {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    padding-bottom: 50px; /* Margen para los puntitos */
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 320px; /* Altura de la fila del carrusel */
+}
+
+.gallery-item.swiper-slide {
+    display: block !important;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    cursor: grab;
+    text-decoration: none;
+}
+
+.gallery-item.swiper-slide:active {
+    cursor: grabbing;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 36, 36, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-overlay span {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    border-bottom: 2px solid #25d366;
+    padding-bottom: 5px;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #333333 !important;
+}
+
+/* RESPONSIVE GENERAL */
+@media (max-width: 992px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+
+/* ===================================================
+   SECCIÓN FOOTER / CONTACTO PREMIUM
+   =================================================== */
+
+.main-footer {
+    background-color: #242424; /* Gris oscuro corporativo */
+    color: #cbd5e0;
+    padding: 60px 8% 20px 8%;
+    border-top: 4px solid #4a5568; 
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Línea verde decorativa debajo de los títulos */
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 35px;
+    height: 2px;
+    background-color: #25d366;
+}
+
+/* Columna de la Marca */
+.about-col .footer-logo img {
+    height: 45px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.about-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #a0aec0;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.footer-socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    background-color: #2d3748;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background-color: #ee6a96; /* El botón de Instagram se ilumina en verde al pasar el mouse */
+    transform: translateY(-3px);
+}
+
+/* Columna de Enlaces */
+.links-col ul {
+    list-style: none;
+}
+
+.links-col ul li {
+    margin-bottom: 12px;
+}
+
+.links-col ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.links-col ul li a i {
+    font-size: 10px;
+    color: #4a5568;
+}
+
+.links-col ul li a:hover {
+    color: #25d366;
+    padding-left: 5px;
+}
+
+/* Columna de Contacto */
+.contact-col ul {
+    list-style: none;
+}
+
+.contact-col ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #cbd5e0;
+}
+
+.contact-col ul li i {
+    color: #25d366;
+    font-size: 16px;
+    margin-top: 3px;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-col ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.contact-col ul li a:hover {
+    color: #ffffff;
+}
+
+/* Barra Inferior */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #2d3748;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #718096;
+}
+
+/* Ajustes para Pantallas Chicas */
+@media (max-width: 480px) {
+    .main-footer {
+        padding: 50px 5% 20px 5%;
+    }
+    .footer-container {
+        gap: 35px;
+    }
+}
+
+/* Estilos Generales de la Sección */
+.galeria-section {
+ padding: 60px 20px;
+ background-color: #ffffff;
+ text-align: center;
+}
+.galeria-header h2 {
+ font-size: 2rem;
+ color: #1a252f;
+ margin-bottom: 10px;
+}
+.galeria-header h2 span {
+ color: #34495e; /* O el color principal de HÁBITAT */
+}
+.galeria-header p {
+ color: #7f8c8d;
+ max-width: 700px;
+ margin: 0 auto 30px auto;
+ font-size: 0.95rem;
+}
+
+/* Botones de Filtro */
+.filter-buttons {
+ margin-bottom: 40px;
+}
+.btn-filter {
+ background-color: #f8f9fa;
+ border: 1px solid #ddd;
+ padding: 10px 20px;
+ margin: 5px;
+ border-radius: 20px;
+ cursor: pointer;
+ font-size: 0.9rem;
+ transition: all 0.3s ease;
+}
+.btn-filter:hover, .btn-filter.active {
+ background-color: #1a252f;
+ color: #fff;
+ border-color: #1a252f;
+}
+
+/* Grilla Responsiva */
+.galeria-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 25px;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+
+/* Items de la Galería */
+.galeria-item {
+ position: relative;
+ background: #fff;
+ border-radius: 12px;
+ overflow: hidden;
+ box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+ transition: transform 0.3s ease;
+}
+.galeria-item:hover {
+ transform: translateY(-5px);
+}
+.galeria-item img {
+ width: 100%;
+ height: 250px;
+ object-fit: cover;
+ display: block;
+}
+
+/* Título fijo para los productos técnicos */
+.product-title {
+ padding: 12px;
+ font-weight: bold;
+ color: #2c3e50;
+ background: #fdfdfd;
+ border-top: 1px solid #f1f1f1;
+ font-size: 0.95rem;
+}
+
+/* Capa de Hover (Efecto WhatsApp) */
+.overlay {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(26, 37, 47, 0.85); /* Fondo oscuro traslúcido */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 0;
+ transition: opacity 0.3s ease;
+}
+.galeria-item:hover .overlay {
+ opacity: 1;
+}
+.overlay span {
+ color: #fff;
+ border: 2px solid #25d366; /* Verde WhatsApp */
+ padding: 8px 16px;
+ border-radius: 5px;
+ font-weight: bold;
+ background: rgba(37, 211, 102, 0.1);
+}
+/* Botones estéticos para el filtrado */
+.btn-filter {
+    background-color: #f4f6f7;
+    border: 1px solid #dcdde1;
+    padding: 8px 18px;
+    margin: 0 5px 10px 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #2c3e50;
+}
+.btn-filter:hover, .btn-filter.active {
+    background-color: #1a252f; /* Ajustalo al negro/gris oscuro de Habitat */
+    color: #ffffff;
+    border-color: #1a252f;
+}
+
+/* Título inferior para las fotos que son renders/productos técnicos */
+.gallery-product-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a252f;
+    padding: 10px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: center;
+    border-top: 1px solid #f1f1f1;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+/* Evita que se tape el overlay cuando hacés hover sobre el producto */
+.gallery-item:hover .gallery-product-title {
+    transform: translateY(100%);
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: center; /* Los centra horizontalmente */
+    gap: 15px;             /* Espacio entre botones */
+    flex-wrap: wrap;        /* Hace que salten de línea si es necesario en móviles */
+}
+
+.contenedor-botones button {
+    width: auto;            /* Ajusta el ancho al contenido */
+    padding: 10px 30px;      /* Controla el tamaño con relleno interno */
+}
+
+.btn-whatsapp-cta {
+    display: inline-block;
+    background-color: #25d366; /* Verde WhatsApp */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px; /* Bordes bien redondeados */
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-whatsapp-cta:hover {
+    background-color: #128c7e;
+    transform: scale(1.05); /* Un pequeño efecto de crecimiento al pasar el mouse */
+}
+.btn-whatsapp-cta {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.form-group { margin-bottom: 20px; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #25d366; /* Verde WhatsApp */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { background-color: #128c7e; }
+.main-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 60px 8%;
+    background-color: #242424; /* El gris oscuro que definimos */
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+    color: #25d366; /* Un detalle verde para que resalte el título */
+}
+
+/* Para que el logo no sea gigante */
+.footer-column img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+/* Esto hace que la línea ocupe todo el ancho disponible */
+.footer-bottom {
+    grid-column: 1 / -1; 
+    text-align: center;
+    border-top: 1px solid #3d3d3d; /* La línea gris finita que se ve arriba del texto */
+    padding-top: 20px;
+    margin-top: 20px;
+    color: #718096;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #718096;
+    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: #25d366;
+}
+.frase-asesoramiento {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #25d366; /* Verde marca */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Asegúrate de que tu botón tenga esta clase para que se vea bien */
+.btn-whatsapp-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #25d366;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-whatsapp-cta:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+}
+
+/* Esto asegura que la página no tenga márgenes blancos por defecto */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+/* Borra las versiones anteriores de estas clases y pega esto: */
+
+.seccion-formulario {
+    /* Fondo con imagen */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/imagen13.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* Expansión total */
+    width: 100vw !important;
+    min-height: 100vh;
+    
+    /* Centrado del contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+ 
+    
+    /* Para romper cualquier restricción de contenedores padres */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+}
+
+
+.contenedor-principal {
+    background-image: url('tu-imagen.jpg');
+    background-size: cover;        /* La imagen cubre todo el área */
+    background-position: center;   /* Centra la imagen */
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;                 /* Asegura que ocupe toda la altura de la pantalla */
+    
+    /* Flexbox para centrar el formulario */
+    display: flex;
+    justify-content: center;       /* Centrado horizontal */
+    align-items: center;           /* Centrado vertical */
+}
+
+
+#contacto {
+    /* La imagen ahora es el fondo de toda la sección */
+    background-image: url('tu-imagen.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Centrado total */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    
+    /* Ajustes de tamaño */
+    min-height: 100vh;
+    width: 100%;
+}
+
+.formulario-card {
+    /* Asegúrate de que el formulario tenga un fondo oscuro para que se lea el texto */
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo negro semitransparente */
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    color: white; /* Asegura que el texto sea visible */
+}
+
+/* Esto asegura que la sección ocupe toda la pantalla y tenga la imagen */
+#contacto {
+   background-image: url('../assets/imagen13.jpeg');
+    background-size: cover;        /* Hace que la imagen tape todo */
+    background-position: center;   /* Centra la imagen */
+    background-repeat: no-repeat;
+    
+    min-height: 100vh;             /* Ocupa el 100% de la altura de la pantalla */
+    width: 100%;                   /* Ocupa todo el ancho */
+    
+    /* Centrado del formulario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Opcional: Si tienes un div interno, quítale el fondo o el tamaño fijo */
+.formulario-card {
+    /* Si tenías un fondo negro en el formulario, déjalo, pero asegúrate 
+       de que no tenga un ancho fijo que empuje el diseño */
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.marcas-section {
+    padding: 60px 8%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.marcasSwiper {
+    width: 100%;
+    padding: 20px 0;
+    cursor: grab;
+}
+
+.marca-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #4a5568;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.marca-slide:hover {
+    color: #25d366; /* Verde marca al pasar el mouse */
+}
+
+.marcas-section {
+    padding: 60px 8%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.marcasSwiper {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden; /* Necesario para que el carrusel funcione bien */
+}
+
+.marca-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #4a5568;
+    font-size: 1.2rem;
+    cursor: grab;
+    transition: color 0.3s ease;
+}
+
+.marca-slide:hover {
+    color: #25d366; /* Verde marca al pasar el mouse */
+}
+.aliados-section {
+    padding: 80px 8%;
+    background-color: #f8f9fa; /* Fondo gris claro para diferenciarlo del resto */
+    text-align: center;
+}
+
+.aliados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.aliado-item {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    font-weight: 700;
+    color: #2d3748;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.aliado-item:hover {
+    transform: translateY(-5px);
+    border-color: #25d366; /* El verde de tu marca aparece al pasar el cursor */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.aliados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    align-items: center;
+    justify-items: center; /* Centra los logos horizontalmente */
+    padding: 20px;
+}
+
+.aliado-item img {
+    max-width: 140px; /* Tamaño máximo para que no se vean gigantes */
+    height: auto;
+    filter: grayscale(100%) opacity(0.7); /* Estilo elegante monocromático */
+    transition: all 0.3s ease;
+}
+
+.aliado-item:hover img {
+    filter: grayscale(0%) opacity(1); /* Color original al pasar el mouse */
+    transform: scale(1.05);
+}
+.aliadosSwiper {
+    padding: 30px 0;
+}
+
+.aliado-item {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.aliado-item img {
+    max-width: 120px;
+    height: auto;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease;
+}
+
+.aliado-item:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+.aliados-section h2 {
+    font-family: 'Poppins', sans-serif; /* O la tipografía que uses en toda tu web */
+    font-size: 28px;                  /* Un tamaño equilibrado */
+    font-weight: 600;                 /* Seminegrita para que no sea tan pesada */
+    color: #2d3748;                   /* Un gris oscuro elegante, evita el negro puro */
+    text-transform: uppercase;        /* Le da un toque corporativo */
+    letter-spacing: 2px;              /* Separa un poco las letras para que respire */
+    margin-bottom: 40px;              /* Espacio hacia los logos */
+    text-align: center;
+}
+.btn-nav-cotizar {
+    background-color: transparent;
+    color: #ffffff !important;
+    border: 2px solid #25d366;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-left: 25px; /* Separación de los otros enlaces */
+    transition: all 0.3s ease;
+}
+
+.btn-nav-cotizar:hover {
+    background-color: #25d366;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
