@@ -63,6 +63,23 @@ nav a:hover {
     background-color: #20ba5a;
 }
 
+.btn-nav-cotizar {
+    background-color: transparent;
+    color: #ffffff !important;
+    border: 2px solid #25d366;
+    padding: 10px 20px; /* Un poco más de espacio interno */
+    border-radius: 5px;
+    font-weight: 600;
+    margin-left: 15px; 
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Evita que la palabra se rompa en dos líneas */
+}
+
+.btn-nav-cotizar:hover {
+    background-color: #25d366;
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
 /* SECCIÓN PORTADA (HERO) */
 .hero {
     height: 85vh;
@@ -1314,4 +1331,16 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
 .features-section .feature-card h3, 
 .features-section .feature-card p {
     color: #ffffff;
+}
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap; /* Permite que el botón baje de línea si no cabe */
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .btn-nav-cotizar {
+        margin-left: 0; /* Centra el botón si baja de línea */
+        width: 100%;    /* Opcional: hace que el botón ocupe todo el ancho en el celu */
+    }
 }
