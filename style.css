@@ -317,9 +317,6 @@ nav a:hover {
     transition: transform 0.3s;
 }
 
-.corp-card:hover {
-    transform: translateX(5px);
-}
 
 .corp-card h3 {
     font-size: 18px;
@@ -1076,20 +1073,20 @@ body, html {
     color: white; /* Asegura que el texto sea visible */
 }
 
-/* Esto asegura que la sección ocupe toda la pantalla y tenga la imagen */
 #contacto {
-   background-image: url('../assets/imagen13.jpeg');
-    background-size: cover;        /* Hace que la imagen tape todo */
-    background-position: center;   /* Centra la imagen */
+    /* La capa oscura va ANTES de la URL de la imagen */
+background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/imagen13.jpeg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     
-    min-height: 100vh;             /* Ocupa el 100% de la altura de la pantalla */
-    width: 100%;                   /* Ocupa todo el ancho */
+    min-height: 100vh;
+    width: 100%;
     
-    /* Centrado del formulario */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 20px; /* Padding extra para móviles */
 }
 
 /* Opcional: Si tienes un div interno, quítale el fondo o el tamaño fijo */
@@ -1256,4 +1253,65 @@ body, html {
     background-color: #25d366;
     color: #ffffff !important;
     transform: translateY(-2px);
+}
+/* SECCIÓN POR QUÉ ELEGIRNOS - MODO OSCURO */
+.features-section {
+    padding: 80px 8%;
+    background-color: #000000; /* Fondo negro */
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #ffffff; /* Texto blanco */
+    font-weight: 700;
+}
+
+.section-title h2 span {
+    color: #25d366; /* Verde de tu marca para resaltar */
+}
+
+.section-title p {
+    color: #cccccc; /* Gris claro para subtítulo */
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* SECCIÓN POR QUÉ ELEGIRNOS - Fondo Negro */
+.features-section {
+    padding: 80px 8%;
+    background-color: #000000;
+}
+.section-title h2 { color: #ffffff; }
+.section-title h2 span { color: #25d366; }
+.section-title p { color: #cccccc; }
+
+/* SECCIÓN GALERÍA - Fondo Negro */
+.gallery-section {
+    padding: 80px 8%;
+    background-color: #000000;
+}
+.gallery-section h2 { color: #ffffff; }
+
+/* SECCIÓN CONTACTO - Imagen con Overlay */
+#contacto {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/imagen13.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Esto da un efecto pro al hacer scroll */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+/* Cambia el fondo de las tarjetas en secciones negras */
+.features-section .feature-card {
+    background-color: #1a1a1a; /* Gris casi negro */
+    border: 1px solid #333333;
+}
+.features-section .feature-card h3, 
+.features-section .feature-card p {
+    color: #ffffff;
 }
