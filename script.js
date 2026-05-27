@@ -145,8 +145,10 @@ document.getElementById('btn-enviar').addEventListener('click', function() {
     // 3. Armamos el mensaje
     const mensaje = `Hola, mi nombre es ${nombre}. Estoy interesado en: ${tipo}. Detalles: ${detalles}`;
     
-    // 4. Formateamos el link (se usa 549 para Argentina)
-    const url = `https://wa.me/549${tel}?text=${encodeURIComponent(mensaje)}`;
+    // 4. Formateamos el link (todo en una sola línea)
+    // El número 5491139352271 es el de la empresa. 
+    // No agregues el número del usuario aquí, ya que el mensaje le llegará a la empresa.
+    const url = `https://wa.me/5491139352271?text=${encodeURIComponent(mensaje)}`;
 
     // 5. Abrimos la ventana
     window.open(url, '_blank');
