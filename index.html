@@ -334,32 +334,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>Solicitá tu presupuesto</h2>
         <p class="frase-asesoramiento">Asesoramiento técnico personalizado. Hacé clic y cotizá tu obra hoy.</p>
         
-        <form>
-            <div class="form-group">
-                <input type="text" name="nombre" placeholder="Nombre completo" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" name="whatsapp" placeholder="WhatsApp (Ej: 1112345678)" required>
-            </div>
-            <div class="form-group">
-                <select name="tipo-abertura">
-                    <option value="">¿Qué necesitás?</option>
-                    <option value="ventanas">Ventanas</option>
-                    <option value="puertas">Puertas</option>
-                    <option value="cerramientos">Cerramientos</option>
-                    <option value="otro">Otro</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <textarea name="mensaje" placeholder="Detalles de tu proyecto (medidas, cantidad...)" rows="4"></textarea>
-            </div>
+      <form id="form-presupuesto">
+    <div class="form-group">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+    </div>
+    <div class="form-group">
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp (Ej: 1112345678)" required>
+    </div>
+    <div class="form-group">
+        <select id="tipo" name="tipo-abertura">
+            <option value="">¿Qué necesitás?</option>
+            <option value="ventanas">Ventanas</option>
+            <option value="puertas">Puertas</option>
+            <option value="cerramientos">Cerramientos</option>
+            <option value="otro">Otro</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <textarea id="detalles" name="mensaje" placeholder="Detalles de tu proyecto (medidas, cantidad...)" rows="4"></textarea>
+    </div>
 
-            <a href="https://wa.me/5491139352271?text=Hola!%20Visité%20la%20web%20de%20Hábitat.%20Asesoramiento%20técnico%20personalizado:%20quiero%20cotizar%20mi%20obra." 
-               target="_blank" 
-               class="btn-whatsapp-cta">
-               <i class="fab fa-whatsapp"></i> Solicitar Presupuesto por WhatsApp
-            </a>
-        </form>
+    <button type="button" id="btn-enviar" class="btn-whatsapp-cta">
+        <i class="fab fa-whatsapp"></i> Solicitar Presupuesto por WhatsApp
+    </button>
+</form>
     </div>
 </section>
 

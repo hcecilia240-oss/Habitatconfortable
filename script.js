@@ -128,3 +128,26 @@ var aliadosSwiper = new Swiper(".aliadosSwiper", {
         1024: { slidesPerView: 5 }
     }
 });
+
+document.getElementById('btn-enviar').addEventListener('click', function() {
+    // 1. Capturamos los valores
+    const nombre = document.getElementById('nombre').value;
+    const tel = document.getElementById('whatsapp').value;
+    const tipo = document.getElementById('tipo').value;
+    const detalles = document.getElementById('detalles').value;
+
+    // 2. Validación básica
+    if (nombre === "" || tel === "") {
+        alert("Por favor, completa tu nombre y número de WhatsApp.");
+        return;
+    }
+
+    // 3. Armamos el mensaje
+    const mensaje = `Hola, mi nombre es ${nombre}. Estoy interesado en: ${tipo}. Detalles: ${detalles}`;
+    
+    // 4. Formateamos el link (se usa 549 para Argentina)
+    const url = `https://wa.me/549${tel}?text=${encodeURIComponent(mensaje)}`;
+
+    // 5. Abrimos la ventana
+    window.open(url, '_blank');
+});
