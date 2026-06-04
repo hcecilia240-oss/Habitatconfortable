@@ -129,7 +129,7 @@ var aliadosSwiper = new Swiper(".aliadosSwiper", {
     }
 });
 
-document.getElementById('btn-enviar').addEventListener('click', function() {
+document.getElementById('btn-enviar').addEventListener('click', function(e) {
     // 1. Capturamos los valores
     const nombre = document.getElementById('nombre').value;
     const tel = document.getElementById('whatsapp').value;
@@ -145,11 +145,12 @@ document.getElementById('btn-enviar').addEventListener('click', function() {
     // 3. Armamos el mensaje
     const mensaje = `Hola, mi nombre es ${nombre}. Estoy interesado en: ${tipo}. Detalles: ${detalles}`;
     
-    // 4. Formateamos el link (todo en una sola línea)
-    // El número 5491139352271 es el de la empresa. 
-    // No agregues el número del usuario aquí, ya que el mensaje le llegará a la empresa.
+    // 4. Formateamos el link
     const url = `https://wa.me/5491139352271?text=${encodeURIComponent(mensaje)}`;
 
-    // 5. Abrimos la ventana
+    // 5. Abrimos WhatsApp en una pestaña nueva
     window.open(url, '_blank');
+
+    // 6. REDIRECCIÓN A PÁGINA DE AGRADECIMIENTO (Esto activa el Píxel de Meta)
+    window.location.href = "leads-calificados.html";
 });
