@@ -142,15 +142,23 @@ document.getElementById('btn-enviar').addEventListener('click', function(e) {
         return;
     }
 
-    // 3. Armamos el mensaje
+    // 3. LLAMADA AL EVENTO (Deduplicación activa)
+    trackEventWithMeta('Lead', { 
+        value: 1.0, 
+        currency: 'ARS',
+        content_name: 'Formulario WhatsApp',
+        lead_type: tipo 
+    });
+
+    // 4. Armamos el mensaje
     const mensaje = `Hola, mi nombre es ${nombre}. Estoy interesado en: ${tipo}. Detalles: ${detalles}`;
     
-    // 4. Formateamos el link
+    // 5. Formateamos el link
     const url = `https://wa.me/5491139352271?text=${encodeURIComponent(mensaje)}`;
 
-    // 5. Abrimos WhatsApp en una pestaña nueva
+    // 6. Abrimos WhatsApp en una pestaña nueva
     window.open(url, '_blank');
 
-    // 6. REDIRECCIÓN A PÁGINA DE AGRADECIMIENTO (Esto activa el Píxel de Meta)
+    // 7. REDIRECCIÓN A PÁGINA DE AGRADECIMIENTO
     window.location.href = "leads-calificados.html";
 });
