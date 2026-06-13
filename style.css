@@ -490,7 +490,7 @@ nav a:hover {
 .swiper-wrapper {
     display: flex;
     flex-direction: row;
-    height: 320px; /* Altura de la fila del carrusel */
+    height: 450px; /* Altura de la fila del carrusel */
 }
 
 .gallery-item.swiper-slide {

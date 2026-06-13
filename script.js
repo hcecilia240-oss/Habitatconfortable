@@ -106,7 +106,7 @@ var marcasSwiper = new Swiper(".marcasSwiper", {
     spaceBetween: 20,
     loop: true,
     autoplay: {
-        delay: 2500,
+        delay: 1000,
         disableOnInteraction: false,
     },
     breakpoints: {
@@ -120,7 +120,7 @@ var aliadosSwiper = new Swiper(".aliadosSwiper", {
     spaceBetween: 20,
     loop: true,
     autoplay: {
-        delay: 2000,
+        delay: 1500,
         disableOnInteraction: false,
     },
     breakpoints: {
@@ -162,3 +162,4 @@ document.getElementById('btn-enviar').addEventListener('click', function(e) {
     // 7. REDIRECCIÓN A PÁGINA DE AGRADECIMIENTO
     window.location.href = "leads-calificados.html";
 });
+
