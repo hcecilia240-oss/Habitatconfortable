@@ -163,3 +163,12 @@ document.getElementById('btn-enviar').addEventListener('click', function(e) {
     window.location.href = "leads-calificados.html";
 });
 
+var infoSwiper = new Swiper(".infoSwiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  pagination: { el: ".swiper-pagination", clickable: true },
+  breakpoints: {
+    768: { slidesPerView: 3 }, // Muestra 3 tarjetas en escritorio
+    1024: { slidesPerView: 4 }
+  }
+});
