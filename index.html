@@ -502,8 +502,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-        </div>
-
    <div class="footer-bottom">
     <p>© 2026 Hábitat Confortable. Todos los derechos reservados. Sitio desarrollado por 
         <a href="https://wa.me/5491123157182" target="_blank" style="color: inherit; text-decoration: underline;">Cecilia Hernández</a>.
@@ -513,7 +511,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-   <script src="script.js"></script>
+   <script>
+    document.getElementById('btn-enviar').addEventListener('click', function() {
+        // 1. Obtener los valores del formulario
+        const nombre = document.getElementById('nombre').value;
+        const telefono = document.getElementById('whatsapp').value;
+        const tipo = document.getElementById('tipo').value;
+        const detalles = document.getElementById('detalles').value;
+
+        // 2. Validación básica
+        if (!nombre || !telefono) {
+            alert('Por favor, completa tu nombre y número de WhatsApp.');
+            return;
+        }
+
+        // 3. Crear el mensaje codificado para WhatsApp
+        const mensaje = `Hola, mi nombre es ${nombre}.%0AQuiero consultar por: ${tipo || 'consulta general'}.%0ADetalles: ${detalles}%0AMi teléfono es: ${telefono}`;
+
+        // 4. Abrir WhatsApp en una pestaña nueva
+        window.open(`https://wa.me/5491139352271?text=${mensaje}`, '_blank');
+
+        // 5. Redireccionar a la página de gracias (Lead Calificados)
+        window.location.href = 'leads-calificados.html';
+    });
+</script>
 </body>
 </html>
