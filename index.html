@@ -149,21 +149,18 @@
   ]
 }
 </script>
-<!-- Canonical Tag -->
+
 <link rel="canonical" href="https://habitatconfortable.com.ar/">
 
 <!-- Open Graph Meta Tags (Para redes y WhatsApp) -->
 <meta property="og:title" content="Aberturas de Aluminio y PVC en Canning | Hábitat Confortable">
 <meta property="og:description" content="Fábrica de aberturas de aluminio y PVC a medida en Canning. Ventanas DVH, cerramientos e instalación profesional.">
-<meta property="og:image" content="https://habitatconfortable.com.ar/tu-imagen-destacada.jpg">
+<meta property="og:image" content="https://habitatconfortable.com.ar/logohabitat">
 <meta property="og:url" content="https://habitatconfortable.com.ar/">
 <meta property="og:type" content="website">
 </head>
+
 <body>
-    <section>
-  <h2>¿Qué es el DVH?</h2>
-  <p>El Doble Vidriado Hermético (DVH) es un sistema de cerramiento compuesto por dos vidrios separados por una cámara de aire estanca, diseñado para maximizar el aislamiento térmico y acústico en viviendas y locales comerciales.</p>
-</section>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58N4S3FC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header>
@@ -237,6 +234,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
+<section class="dvh-dark-section">
+    <div class="dvh-card">
+        <h2>¿Qué es el Doble Vidriado Hermético (DVH)?</h2>
+        <p>El <strong>DVH</strong> es un sistema de cerramiento compuesto por dos vidrios separados por una cámara de aire estanca, sellada herméticamente en todo su perímetro...</p>
+        
+        <ul class="dvh-list">
+            <li><strong>Aislamiento Térmico:</strong> Reduce drásticamente la pérdida de calor...</li>
+            <li><strong>Aislamiento Acústico:</strong> Disminuye significativamente el ruido...</li>
+            <li><strong>Ahorro Energético:</strong> Menor consumo de energía...</li>
+            <li><strong>Sin Condensación:</strong> Elimina la formación de vaho...</li>
+        </ul>
+    </div>
+</section>
+
+<section id="comparativa" class="comparison-section">
+    <div class="container">
+        <h2>Aluminio vs. PVC: ¿Cuál elegir para tu obra?</h2>
+        <p>Ambos materiales son excelentes, pero responden a necesidades diferentes. Esta tabla te ayudará a decidir según tu prioridad:</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Aluminio</th>
+                    <th>PVC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Aislación Térmica</strong></td>
+                    <td>Media (Alta con RPT)</td>
+                    <td>Excelente (Natural)</td>
+                </tr>
+                <tr>
+                    <td><strong>Aislación Acústica</strong></td>
+                    <td>Buena</td>
+                    <td>Excelente</td>
+                </tr>
+                <tr>
+                    <td><strong>Mantenimiento</strong></td>
+                    <td>Muy bajo</td>
+                    <td>Mínimo</td>
+                </tr>
+                <tr>
+                    <td><strong>Estética</strong></td>
+                    <td>Minimalista y versátil</td>
+                    <td>Cálida y robusta</td>
+                </tr>
+                <tr>
+                    <td><strong>Durabilidad</strong></td>
+                    <td>Muy alta</td>
+                    <td>Alta</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 <section id="nosotros" class="about-section">
     <div class="about-container">
         <div class="about-text">
@@ -276,6 +331,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </section>
+
 
 <section id="galeria" class="gallery-section">
     <div class="section-title">
@@ -631,26 +687,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  // Carrusel de Galería
-  const swiperGaleria = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      768: { slidesPerView: 3 }, // Muestra 3 fotos en PC
-      1024: { slidesPerView: 4 }
-    }
-  });
+  // Ahora inicializamos después de que la librería cargó
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    // Carrusel de Galería
+    const swiperGaleria = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true, // Agregado para mejor experiencia
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 }
+      }
+    });
 
-  // Carrusel de Aliados
-  const swiperAliados = new Swiper(".aliadosSwiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: { delay: 2000 }
+    // Carrusel de Aliados
+    const swiperAliados = new Swiper(".aliadosSwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: { delay: 2000 }
+    });
+    
   });
 </script>
 </body>
