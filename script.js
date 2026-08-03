@@ -1,18 +1,36 @@
 let swiperGallery = null;
 
 function initSwiper() {
+    // 1. Destruir si ya existe para evitar duplicados
     if (swiperGallery) {
         swiperGallery.destroy(true, true);
     }
+
+    // 2. Inicializar nuevo Swiper
     swiperGallery = new Swiper(".mySwiper", {
         slidesPerView: 3,
         spaceBetween: 20,
-        loop: false,
+        loop: true, // Necesario para el autoplay fluido
         observer: true,
         observeParents: true,
         observeSlideChildren: true,
-        pagination: { el: ".swiper-pagination", clickable: true },
-        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        
+        // CONFIGURACIÓN DE AUTOPLAY
+        autoplay: {
+            delay: 1500, // Velocidad: 1.5 segundos entre cambios
+            disableOnInteraction: false, // Sigue girando aunque el usuario toque
+            pauseOnMouseEnter: true // Se pausa si pasas el mouse por encima
+        },
+        speed: 800, // Qué tan suave es la transición
+
+        pagination: { 
+            el: ".swiper-pagination", 
+            clickable: true 
+        },
+        navigation: { 
+            nextEl: ".swiper-button-next", 
+            prevEl: ".swiper-button-prev" 
+        },
         breakpoints: {
             0: { slidesPerView: 1, spaceBetween: 15 },
             768: { slidesPerView: 2, spaceBetween: 20 },
@@ -21,7 +39,6 @@ function initSwiper() {
     });
 }
 
-// AQUÍ EMPIEZA TU FUNCIÓN CORRECTAMENTE
 function filterGallery(category, event) {
     // 1. Manejo de botones activos
     document.querySelectorAll(".btn-filter").forEach(btn => {
@@ -29,7 +46,7 @@ function filterGallery(category, event) {
     });
     event.currentTarget.classList.add("active");
 
-    // 2. Lógica de filtrado (Esto es lo que tenías suelto)
+    // 2. Lógica de filtrado
     document.querySelectorAll(".gallery-item").forEach(item => {
         if (category === "todas" || item.dataset.category === category) {
             item.style.display = "";
@@ -40,16 +57,17 @@ function filterGallery(category, event) {
         }
     });
 
-    // 3. Reiniciar Swiper
+    // 3. Reiniciar Swiper tras el filtrado
     setTimeout(() => {
         initSwiper();
     }, 100);
 }
-// AQUÍ TERMINA LA FUNCIÓN
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Inicialización inicial
     initSwiper();
 
+    // Eventos para botones
     const filterButtons = document.querySelectorAll(".btn-filter");
     filterButtons.forEach(button => {
         button.addEventListener("click", (event) => {

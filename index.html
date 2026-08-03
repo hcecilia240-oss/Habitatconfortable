@@ -340,9 +340,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="filter-buttons" style="text-align: center; margin-bottom: 30px;">
-<button class="btn-filter" data-category="todas">Todas</button>
-<button class="btn-filter" data-category="obras">Obras Entregadas</button>
-<button class="btn-filter" data-category="productos">Líneas y Productos</button>
+<button class="filtro-btn" data-filtro="todas">Todas</button>
+<button class="filtro-btn" data-filtro="obras">Obras Entregadas</button>
+<button class="filtro-btn" data-filtro="productos">Lineas y Productos</button>
     </div>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper" id="swiper-wrapper-gallery">
@@ -694,18 +694,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  // Ahora inicializamos después de que la librería cargó
   document.addEventListener('DOMContentLoaded', function () {
     
     // Carrusel de Galería
     const swiperGaleria = new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 20,
-      loop: true, // Agregado para mejor experiencia
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true }, // Opcional: añade puntos de navegación
       breakpoints: {
         768: { slidesPerView: 3 },
         1024: { slidesPerView: 4 }
@@ -717,9 +713,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       slidesPerView: 3,
       spaceBetween: 30,
       loop: true,
-      autoplay: { delay: 2000 }
+      autoplay: { 
+        delay: 2000,
+        disableOnInteraction: false // El autoplay sigue funcionando aunque el usuario toque el carrusel
+      },
+      speed: 1000 // Hace que la transición sea más suave (en milisegundos)
     });
     
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 1. Lógica de Filtrado
+    const botones = document.querySelectorAll('.filtro-btn'); // Asegúrate que tus botones tengan esta clase
+    const elementos = document.querySelectorAll('.galeria-item'); // Tus fotos deben tener esta clase
+
+    botones.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const filtro = boton.getAttribute('data-filtro');
+        
+        elementos.forEach(item => {
+          if (filtro === 'todas' || item.classList.contains(filtro)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 2. Inicialización de la Galería (Swiper)
+    // Es vital que el contenedor principal tenga la clase .mySwiper
+    const swiperGaleria = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      breakpoints: {
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 }
+      }
+    });
   });
 </script>
 </body>
