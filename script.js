@@ -1,27 +1,26 @@
 let swiperGallery = null;
 
 function initSwiper() {
-    // 1. Destruir si ya existe para evitar duplicados
     if (swiperGallery) {
         swiperGallery.destroy(true, true);
     }
 
-    // 2. Inicializar nuevo Swiper
+
     swiperGallery = new Swiper(".mySwiper", {
         slidesPerView: 3,
         spaceBetween: 20,
-        loop: true, // Necesario para el autoplay fluido
+        loop: true, 
         observer: true,
         observeParents: true,
         observeSlideChildren: true,
         
-        // CONFIGURACIÓN DE AUTOPLAY
+        
         autoplay: {
-            delay: 1500, // Velocidad: 1.5 segundos entre cambios
-            disableOnInteraction: false, // Sigue girando aunque el usuario toque
-            pauseOnMouseEnter: true // Se pausa si pasas el mouse por encima
+            delay: 1500, 
+            disableOnInteraction: false, 
+            pauseOnMouseEnter: true 
         },
-        speed: 800, // Qué tan suave es la transición
+        speed: 800, 
 
         pagination: { 
             el: ".swiper-pagination", 
@@ -46,7 +45,7 @@ function filterGallery(category, event) {
     });
     event.currentTarget.classList.add("active");
 
-    // 2. Lógica de filtrado
+    
     document.querySelectorAll(".gallery-item").forEach(item => {
         if (category === "todas" || item.dataset.category === category) {
             item.style.display = "";
@@ -57,17 +56,17 @@ function filterGallery(category, event) {
         }
     });
 
-    // 3. Reiniciar Swiper tras el filtrado
+   
     setTimeout(() => {
         initSwiper();
     }, 100);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Inicialización inicial
+   
     initSwiper();
 
-    // Eventos para botones
+    
     const filterButtons = document.querySelectorAll(".btn-filter");
     filterButtons.forEach(button => {
         button.addEventListener("click", (event) => {
