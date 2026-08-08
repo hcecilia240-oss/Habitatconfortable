@@ -313,6 +313,7 @@ letter-spacing:0;
     margin-bottom: 15px;
 }
 
+
 .philosophy-box {
     background-color: #333333;
     color: #ffffff;
@@ -1512,4 +1513,116 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
+}
+
+.products-section {
+    padding: 80px 8%;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background-color: #1e293b; 
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 35px 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #10b981;
+}
+
+.product-icon {
+    font-size: 34px;
+    color: #10b981;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.product-card p {
+    font-size: 15px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.section-title p {
+    color: #4b5563; 
+}
+
+.coverage-section {
+    padding: 80px 8%;
+    background-color: #f8fafc; 
+}
+
+.map-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+
+.final-cta-section {
+    padding: 90px 8%;
+    background-color: #ffffff; 
+    text-align: center;
+}
+
+.final-cta-section .section-title {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.final-cta-section h2 {
+    font-size: 32px;
+    color: #111827;
+    margin-bottom: 25px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.final-cta-section p {
+    font-size: 16px;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.btn-whatsapp-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 16px 35px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-whatsapp-large:hover {
+    background-color: #22bf5b;
+    transform: translateY(-2px);
 }
