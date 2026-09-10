@@ -1,34 +1,37 @@
+
 let swiperGallery = null;
 
 function initSwiper() {
+
     if (swiperGallery) {
         swiperGallery.destroy(true, true);
     }
 
-
+   
     swiperGallery = new Swiper(".mySwiper", {
         slidesPerView: 3,
         spaceBetween: 20,
-        loop: true, 
+        loop: true,
+       
         observer: true,
         observeParents: true,
         observeSlideChildren: true,
         
-        
+       
         autoplay: {
-            delay: 1500, 
+            delay: 2500, // 2.5 segundos
             disableOnInteraction: false, 
             pauseOnMouseEnter: true 
         },
-        speed: 800, 
+        speed: 800,
 
-        pagination: { 
-            el: ".swiper-pagination", 
-            clickable: true 
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
         },
-        navigation: { 
-            nextEl: ".swiper-button-next", 
-            prevEl: ".swiper-button-prev" 
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
         },
         breakpoints: {
             0: { slidesPerView: 1, spaceBetween: 15 },
@@ -38,21 +41,23 @@ function initSwiper() {
     });
 }
 
-function filterGallery(category, event) {
-    // 1. Manejo de botones activos
+
+// --- Función de Filtrado ---
+function filterGallery(category, clickedButton) {
+    // 1. Manejo visual de botones activos
     document.querySelectorAll(".btn-filter").forEach(btn => {
         btn.classList.remove("active");
     });
-    event.currentTarget.classList.add("active");
+    clickedButton.classList.add("active");
 
-    
+   
     document.querySelectorAll(".gallery-item").forEach(item => {
         if (category === "todas" || item.dataset.category === category) {
             item.style.display = "";
-            item.classList.add("swiper-slide");
+            item.classList.add("swiper-slide"); 
         } else {
-            item.style.display = "none";
-            item.classList.remove("swiper-slide");
+            item.style.display = "none"; 
+            item.classList.remove("swiper-slide"); 
         }
     });
 
@@ -62,16 +67,28 @@ function filterGallery(category, event) {
     }, 100);
 }
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
-   
+    
     initSwiper();
 
-    
-    const filterButtons = document.querySelectorAll(".btn-filter");
-    filterButtons.forEach(button => {
-        button.addEventListener("click", (event) => {
-            const category = button.getAttribute("data-category");
-            filterGallery(category, event);
+   
+    const filterContainer = document.querySelector(".filter-container");
+
+    if (filterContainer) {
+        filterContainer.addEventListener("click", (event) => {
+       
+            const clickedButton = event.target.closest(".btn-filter");
+            
+            if (clickedButton) {
+             
+                const category = clickedButton.getAttribute("data-category");
+               
+                filterGallery(category, clickedButton);
+            }
         });
-    });
+    } else {
+        console.error("No se encontró el contenedor '.filter-container'. Revisa tu HTML.");
+    }
 });
