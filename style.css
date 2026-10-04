@@ -1648,3 +1648,133 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     justify-content: center;
     margin: 0 auto; /* Centrar cada tarjeta dentro de su slide */
 }
+.about-section {
+    padding: 80px 20px;
+    background-color: #f8f9fa; /* Un fondo gris muy suave para separar secciones */
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 50px;
+    align-items: center;
+}
+
+/* Imagen moderna con bordes redondeados y sombra */
+.about-image-box .image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.about-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image-box img:hover {
+    transform: scale(1.03);
+}
+
+.image-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Tipografía y textos */
+.section-subtitle {
+    display: block;
+    color: #007bff; /* O el color de acento de tu marca */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.about-title {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.about-text p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-text .lead-text {
+    font-size: 1.15rem;
+    color: #222;
+    font-weight: 500;
+}
+
+/* Cuadrícula de características moderna */
+.about-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    border-color: #007bff;
+}
+
+.feature-card i {
+    color: #28a745;
+    font-size: 1.2rem;
+}
+
+.feature-card span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Diseño responsivo para celulares */
+@media (max-width: 968px) {
+    .about-container {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas chicas */
+        gap: 30px;
+    }
+    
+    .about-title {
+        font-size: 1.8rem;
+    }
+
+    .about-features-grid {
+        grid-template-columns: 1fr;
+    }
+}
