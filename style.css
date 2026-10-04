@@ -118,7 +118,7 @@ font-weight:700;
  margin-bottom:30px;
 }
 .hero-content p{
-font: size 17px;
+font-size: 17px;
  line-height:1.7;
 margin-bottom:22px;
  font-weight:400;
@@ -524,84 +524,6 @@ letter-spacing:0;
 
 .swiper.mySwiper {
     width: 100%;
-    height: auto;
-    margin-top: 40px;
-    padding-bottom: 50px; 
-}
-
-.swiper-wrapper {
-    display: flex;
-    flex-direction: row;
-    height: 450px;
-}
-
-.gallery-item.swiper-slide {
-    display: block !important;
-    flex-shrink: 0;
-    height: 100%;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    cursor: grab;
-    text-decoration: none;
-}
-
-.gallery-item.swiper-slide:active {
-    cursor: grabbing;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(36, 36, 36, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-overlay span {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 16px;
-    border-bottom: 2px solid #25d366;
-    padding-bottom: 5px;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-    background: #333333 !important;
-}
-
-@media (max-width: 992px) {
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
         flex-direction: column;
         gap: 15px;
         padding: 15px;
@@ -783,168 +705,6 @@ letter-spacing:0;
  color: #1a252f;
  margin-bottom: 10px;
 }
-.galeria-header h2 span {
- color: #34495e;
-}
-.galeria-header p {
- color: #7f8c8d;
- max-width: 700px;
- margin: 0 auto 30px auto;
- font-size: 0.95rem;
-}
-
-.filter-container {
-  display: flex !important;
-  flex-direction: row !important; /* Fuerza a que se pongan en fila */
-  justify-content: center !important;
-  align-items: center;
-  gap: 12px;
-  margin: 30px auto;
-  width: 100%;
-  max-width: 800px;
-}
-
-.btn-filter {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
-  padding: 10px 24px;
-  border-radius: 50px; 
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  white-space: nowrap; 
-  width: auto !important; 
-}
-
-.btn-filter:hover, 
-.btn-filter.active {
-  background-color: #00FF66; 
-  color: #000;
-  border-color: #00FF66;
-  font-weight: 600;
-}
-.btn-filter {
-  padding: 12px 28px; 
-  font-size: 15px;
-  font-weight: 500;
-}
-.btn-filter.active, 
-.btn-filter:hover {
-  background-color: #00FF66;
-  color: #000000;           
-  border-color: #00FF66;
-  font-weight: 700;
-}
-
-.galeria-grid {
- display: grid;
- grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
- gap: 25px;
- max-width: 1200px;
- margin: 0 auto;
-}
-
-.galeria-item {
- position: relative;
- background: #fff;
- border-radius: 12px;
- overflow: hidden;
- box-shadow: 0 4px 12px rgba(0,0,0,0.05);
- transition: transform 0.3s ease;
-}
-.galeria-item:hover {
- transform: translateY(-5px);
-}
-.galeria-item img {
- width: 100%;
- height: 250px;
- object-fit: cover;
- display: block;
-}
-
-.product-title {
- padding: 12px;
- font-weight: bold;
- color: #2c3e50;
- background: #fdfdfd;
- border-top: 1px solid #f1f1f1;
- font-size: 0.95rem;
-}
-
-.overlay {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: rgba(26, 37, 47, 0.85); 
- display: flex;
- align-items: center;
- justify-content: center;
- opacity: 0;
- transition: opacity 0.3s ease;
-}
-.galeria-item:hover .overlay {
- opacity: 1;
-}
-.overlay span {
- color: #fff;
- border: 2px solid #25d366; 
- padding: 8px 16px;
- border-radius: 5px;
- font-weight: bold;
- background: rgba(37, 211, 102, 0.1);
-}
-
-.btn-filter {
-    background-color: #f4f6f7;
-    border: 1px solid #dcdde1;
-    padding: 8px 18px;
-    margin: 0 5px 10px 5px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    color: #2c3e50;
-}
-.btn-filter:hover, .btn-filter.active {
-    background-color: #1a252f; 
-    color: #ffffff;
-    border-color: #1a252f;
-}
-
-.gallery-product-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    color: #1a252f;
-    padding: 10px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    text-align: center;
-    border-top: 1px solid #f1f1f1;
-    z-index: 2;
-    transition: transform 0.3s ease;
-}
-
-
-.gallery-item:hover .gallery-product-title {
-    transform: translateY(100%);
-}
-
-.contenedor-botones {
-    display: flex;
-    justify-content: center; 
-    gap: 15px;          
-    flex-wrap: wrap;       
-}
-
-.contenedor-botones button {
-    width: auto;           
     padding: 10px 30px;     
 }
 
@@ -1651,30 +1411,148 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     transform: translateY(-2px);
 }
 
-.swiper-slide img {
-  width: 100%;
-  height: 320px;     
-  object-fit: cover;  
-  border-radius: 12px; 
-  display: block;
-}
-.swiper-slide img {
-  width: 100%;
-  height: 220px;       
-  object-fit: contain; 
-  padding: 20px;       
-  background-color: #ffffff; 
-  border-radius: 12px;
-  display: block;
-
+.gallery-animated-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #050505 0%, #111a14 100%);
+    color: #fff;
+    overflow: hidden;
 }
 
-.gallery-section .swiper-slide img,
-.mySwiper .swiper-slide img {
-  width: 100%;
-  height: 380px;       
-  object-fit: cover;    
-  border-radius: 16px;  
-  display: block;
-  background-color: #111; 
+.section-title {
+    text-align: center;
+    padding: 0 5%;
+    margin-bottom: 50px;
+}
+
+.section-title h2 span {
+    color: #00e676;
+    text-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+}
+
+/* Contenedor de las pistas deslizantes */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+/* Efecto de desvanecimiento en los costados para que quede ultra elegante */
+.marquee-container::before,
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 3;
+    pointer-events: none;
+}
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, #050505, transparent);
+}
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, #050505, transparent);
+}
+
+/* Pista general de animación */
+.marquee-track {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+    will-change: transform;
+}
+
+/* Animación hacia la izquierda */
+.track-left {
+    animation: scrollLeft 35s linear infinite;
+}
+
+/* Animación hacia la derecha */
+.track-right {
+    animation: scrollRight 35s linear infinite;
+}
+
+/* Si el usuario apoya el mouse encima, las cintas se PAUSAN para que pueda hacer clic cómodo */
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Tarjetas flotantes individuales */
+.floating-card {
+    position: relative;
+    width: 320px;
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    display: block;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.floating-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efectos al pasar el mouse por una tarjeta específica */
+.floating-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: #00e676;
+    box-shadow: 0 15px 30px rgba(0, 230, 118, 0.3);
+    z-index: 10;
+}
+
+.floating-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Cartelito flotante de WhatsApp que aparece animado */
+.float-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-card:hover .float-overlay {
+    opacity: 1;
+}
+
+.float-overlay span {
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.floating-card:hover .float-overlay span {
+    transform: translateY(0);
 }
