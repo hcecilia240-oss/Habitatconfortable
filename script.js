@@ -158,3 +158,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+// Inicializar Tilt
+VanillaTilt.init(document.querySelectorAll('.aliado-item'), {
+    max: 15,          
+    perspective: 1000, 
+    scale: 1.05,       
+    speed: 400,        
+    glare: true,       
+    "max-glare": 0.3,  
+});
+
+const aliadosSwiper = new Swiper('.aliadosSwiper', {
+    slidesPerView: 2,
+    spaceBetween: 30, // ¡Importante para que no queden pegados!
+    loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        640: { slidesPerView: 3, spaceBetween: 30 },
+        768: { slidesPerView: 4, spaceBetween: 30 },
+        1024: { slidesPerView: 6, spaceBetween: 30 } // Mostramos los 6 juntos con espacio
+    }
+});

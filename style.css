@@ -538,7 +538,7 @@ letter-spacing:0;
     .hero-content p {
         font-size: 16px;
     }
-}
+
 
 
 .main-footer {
@@ -704,8 +704,6 @@ letter-spacing:0;
  font-size: 2rem;
  color: #1a252f;
  margin-bottom: 10px;
-}
-    padding: 10px 30px;     
 }
 
 .btn-whatsapp-cta {
@@ -1555,4 +1553,98 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
 
 .floating-card:hover .float-overlay span {
     transform: translateY(0);
+}
+.aliado-item {
+    /* Necesario para el efecto 3D */
+    transform-style: preserve-3d;
+    /* Un poco de perspectiva para que se note el efecto */
+    perspective: 1000px;
+    /* Asegura que el logo no se desborde al inclinarse */
+    overflow: hidden;
+    border-radius: 10px; /* Unos bordes suaves quedan genial */
+    background: #f8f9fa; /* Fondo sutil para el contenedor */
+    padding: 25px;
+    transition: box-shadow 0.3s ease;
+}
+
+.aliado-item:hover {
+    /* Sombra más pronunciada al interactuar */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.aliado-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* El logo se aleja ligeramente al inclinarse para mayor efecto */
+    transform: translateZ(20px); 
+}
+.aliado-item {
+    padding: 15px; /* Reducir el espacio interno */
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+.aliado-item img {
+    max-width: 100px; /* Limitar el ancho máximo para que no abarque toda la pantalla */
+    height: auto;
+    object-fit: contain;
+}
+.aliados-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.aliadosSwiper {
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo para que no se expanda infinito */
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+/* Forzar el ancho correcto de cada elemento dentro del carrusel */
+.aliadosSwiper .swiper-slide {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aliado-item {
+    width: 100%;
+    max-width: 180px; /* Tamaño máximo para cada tarjeta de logo */
+    height: 100px;    /* Altura fija para que todas sean iguales */
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aliado-item img {
+    max-width: 100%;
+    max-height: 60px; /* Evita que el logo crezca de más */
+    object-fit: contain;
+}
+/* Asegurar separación entre cada elemento del carrusel */
+.aliadosSwiper .swiper-slide {
+    padding: 0 10px; /* Esto crea un espacio lateral de separación entre tarjetas */
+}
+
+/* Opcional: si quieres ajustar un poco el tamaño de las tarjetas para que no se peguen */
+.aliado-item {
+    width: 100%;
+    max-width: 170px;
+    height: 90px;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centrar cada tarjeta dentro de su slide */
 }
