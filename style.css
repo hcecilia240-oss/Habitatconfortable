@@ -1778,3 +1778,321 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
         grid-template-columns: 1fr;
     }
 }
+
+/* Sección general oscura */
+.elegirnos-section-dark {
+    background-color: #12181b;
+    color: #ffffff;
+    padding: 6rem 1rem;
+    width: 100%;
+}
+
+/* Contenedor principal que apila todo verticalmente */
+.elegirnos-section-dark .contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Clave: apila título, tarjetas y pie en columna */
+    align-items: center;    /* Centra todo horizontalmente */
+}
+
+/* Estilo del título superior */
+.titulo-seccion-dark {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 3.5rem;
+}
+
+.titulo-seccion-dark h2 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.titulo-seccion-dark p {
+    color: #adb5bd;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Grilla de tarjetas (ocupa todo el ancho disponible del contenedor) */
+.grilla-tarjetas-dark {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 3.5rem;
+}
+
+/* Tarjetas individuales */
+.tarjeta-dark {
+    background: #1a2226;
+    border: 1px solid #2a343b;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border-top: 4px solid #28a745; /* Detalle verde */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-dark:hover {
+    transform: translateY(-6px);
+    border-color: #28a745;
+    box-shadow: 0 12px 30px rgba(40, 167, 69, 0.15);
+}
+
+.tarjeta-dark .icono-dark {
+    font-size: 1.8rem;
+    color: #28a745;
+    margin-bottom: 1.2rem;
+}
+
+.tarjeta-dark h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.tarjeta-dark p {
+    font-size: 0.95rem;
+    color: #b0bec5;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Pie de sección inferior centrado */
+.pie-seccion-dark {
+    text-align: center;
+    max-width: 750px;
+    padding-top: 2rem;
+    border-top: 1px solid #2a343b;
+    width: 100%;
+}
+
+.pie-seccion-dark p {
+    color: #e0e0e0;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+}
+/* Sección general oscura de productos */
+.products-section-dark {
+    background-color: #12181b;
+    color: #ffffff;
+    padding: 6rem 1rem;
+    width: 100%;
+}
+
+/* Contenedor principal que apila y centra verticalmente */
+.products-section-dark .contenido-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título superior centrado */
+.section-title-dark {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 3.5rem;
+}
+
+.section-title-dark h2 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-title-dark p {
+    color: #adb5bd;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+/* Sección general oscura */
+.products-section-dark {
+    background-color: #12181b;
+    color: #ffffff;
+    padding: 6rem 1rem;
+    width: 100%;
+}
+
+.products-section-dark .contenido-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título superior */
+.section-title-dark {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 3.5rem;
+}
+
+.section-title-dark h2 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-title-dark p {
+    color: #adb5bd;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Contenedor general de filas */
+.products-grid-dark {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Fila superior: exactamente 3 columnas */
+.fila-superior {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Fila inferior: exactamente 2 columnas, pero con un max-width para que no se estiren de más y queden perfectamente centradas abajo */
+.fila-inferior {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 800px; /* Ancho justo para que las dos simulen el espacio central de las de arriba */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Estilo de las tarjetas */
+.product-card-dark {
+    background: #1a2226;
+    border: 1px solid #2a343b;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border-top: 4px solid #28a745;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card-dark:hover {
+    transform: translateY(-6px);
+    border-color: #28a745;
+    box-shadow: 0 12px 30px rgba(40, 167, 69, 0.15);
+}
+
+.product-card-dark .product-icon-dark {
+    font-size: 1.8rem;
+    color: #28a745;
+    margin-bottom: 1.2rem;
+}
+
+.product-card-dark h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.product-card-dark p {
+    font-size: 0.95rem;
+    color: #b0bec5;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsivo para celulares: se apilan todas en 1 sola columna */
+@media (max-width: 900px) {
+    .fila-superior,
+    .fila-inferior {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+}
+/* Contenedor del mapa (asegurate de que tu iframe o contenedor tenga esta clase o ID) */
+.map-container, iframe {
+    width: 100%;
+    border-radius: 16px;
+    border: 2px solid #2a343b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: brightness(0.95) contrast(1.05); /* Le da un toque un poco más integrado al modo oscuro */
+}
+
+/* Efecto interactivo al pasar el cursor (Hover) */
+.map-container:hover, iframe:hover {
+    transform: translateY(-5px) scale(1.01); /* Se eleva levemente y hace un zoom imperceptible */
+    border-color: #28a745; /* El borde se ilumina con el verde corporativo */
+    box-shadow: 0 20px 40px rgba(40, 167, 69, 0.2); /* Sombra difusa verde elegante */
+    filter: brightness(1); /* Vuelve al brillo normal al tocarlo */
+}
+
+/* Animación de entrada suave cuando el usuario baja hasta el mapa */
+@keyframes fadeInMap {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.map-container, iframe {
+    animation: fadeInMap 1s ease-out forwards;
+}
+/* Contenedor general de la sección del mapa / zona */
+.seccion-zona, .zona-container { /* Usá la clase que envuelva a tus textos actuales */
+    background-color: #12181b; /* Fondo oscuro armónico con el resto de la web */
+    color: #ffffff;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+/* Título principal más elegante */
+.seccion-zona h2, .zona-container h2 {
+    font-size: 2.2rem;
+    font-weight: 600; /* Menos pesado, más refinado */
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+/* Párrafos principales: limitamos el ancho para que no se estiren demasiado y mejoramos la lectura */
+.seccion-zona p, .zona-container p {
+    color: #b0bec5; /* Un gris suave muy delicado sobre fondo oscuro */
+    font-size: 1.05rem;
+    line-height: 1.7; /* Mayor separación entre renglones para ligereza visual */
+    max-width: 800px;  /* Evita que las líneas sean muy largas y cansen la vista */
+    margin: 0 auto 1.2rem auto;
+}
+
+/* Párrafo de localidades (lo hacemos destacar sutilmente pero con clase) */
+.seccion-zona p.localidades, .zona-container .texto-secundario {
+    color: #cfd8dc;
+    font-size: 1.05rem;
+}
+
+/* Destacados de las ciudades (Canning, Ezeiza, etc.) en blanco brillante o verde sutil */
+.seccion-zona strong, .zona-container strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Llamado a la acción previo al botón ("¿Tu proyecto está en zona sur?...") */
+.seccion-zona .cta-texto, .zona-container .pregunta-cta {
+    font-size: 1.15rem;
+    color: #28a745; /* Un toque sutil en verde para guiar la mirada hacia el botón de WhatsApp */
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
