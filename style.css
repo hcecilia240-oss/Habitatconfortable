@@ -1,4 +1,3 @@
-
 :root {
     --color-fondo-header: #242424; 
     --color-acento: #25d366;      
@@ -2095,4 +2094,658 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     font-weight: 500;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
+}
+/* =========================================================
+   RESPONSIVE - HÁBITAT CONFORTABLE
+   Ajustes exclusivos para tablets y celulares
+   ========================================================= */
+
+/* Evitar desbordamiento horizontal */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Las imágenes nunca deben salir de su contenedor */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+    header {
+        padding: 12px 25px;
+        gap: 15px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 80vh;
+        padding: 50px 25px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    /* ABOUT */
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image-box {
+        width: 100%;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    /* GRIDS */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* TABLA */
+    .comparison-section {
+        padding: 50px 15px;
+        overflow-x: auto;
+    }
+
+    .comparison-table {
+        width: 100%;
+        min-width: 600px;
+    }
+
+    /* CONTACTO */
+    #contacto {
+        background-attachment: scroll;
+    }
+
+    .formulario-card {
+        width: 95%;
+        padding: 30px;
+    }
+
+    /* MAPA */
+    .map-container iframe {
+        height: 350px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------------------
+       GENERAL
+       ----------------------------------------------------- */
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    header {
+        width: 100%;
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo img {
+        height: 65px;
+        max-width: 180px;
+        object-fit: contain;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 13px;
+        padding: 5px 7px;
+    }
+
+    .btn-nav-wa,
+    .btn-nav-cotizar {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
+
+    .hero {
+        min-height: 75vh;
+        padding: 45px 18px;
+        background-position: center center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p,
+    .hero-text p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .hero-lead {
+        font-size: 17px !important;
+    }
+
+    .hero-text {
+        margin: 20px 0 25px;
+    }
+
+    .btn-main-wa {
+        width: 100%;
+        max-width: 320px;
+        padding: 13px 20px;
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       TÍTULOS DE SECCIÓN
+       ----------------------------------------------------- */
+
+    .section-title {
+        padding: 0 5px;
+        margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+        font-size: 25px !important;
+        line-height: 1.3;
+    }
+
+    .section-title p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURES
+       ----------------------------------------------------- */
+
+    .features-section {
+        padding: 55px 18px !important;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 25px;
+    }
+
+    .feature-card {
+        width: 100%;
+        padding: 22px;
+    }
+
+    .feature-card h3 {
+        font-size: 17px;
+    }
+
+    .feature-card p {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       ABOUT
+       ----------------------------------------------------- */
+
+    .about-section {
+        padding: 55px 18px !important;
+    }
+
+    .about-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .about-image-box,
+    .about-text {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .about-image-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-title,
+    .about-text h2 {
+        font-size: 25px !important;
+        line-height: 1.3;
+    }
+
+    .about-text p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .about-features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    .feature-card {
+        min-width: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       CAJAS / CARDS
+       ----------------------------------------------------- */
+
+    .corp-card,
+    .values-box,
+    .philosophy-box {
+        width: 100%;
+        padding: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       PRODUCTOS
+       ----------------------------------------------------- */
+
+    .products-section {
+        padding: 55px 18px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       MARCAS / ALIADOS
+       ----------------------------------------------------- */
+
+    .marcas-section,
+    .aliados-section {
+        padding: 50px 15px;
+    }
+
+    .aliadosSwiper {
+        width: 100%;
+        padding: 15px 0;
+        overflow: hidden;
+    }
+
+    .aliadosSwiper .swiper-slide {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .aliado-item {
+        width: 150px !important;
+        max-width: 150px !important;
+        height: 90px;
+        padding: 12px;
+        margin: 0 auto;
+    }
+
+    .aliado-item img {
+        max-width: 110px;
+        max-height: 60px;
+        object-fit: contain;
+    }
+
+    .aliados-section h2 {
+        font-size: 23px;
+        letter-spacing: 1px;
+        line-height: 1.3;
+    }
+
+
+    /* -----------------------------------------------------
+       GALERÍA ANIMADA
+       ----------------------------------------------------- */
+
+    .gallery-animated-section {
+        padding: 55px 0;
+    }
+
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .floating-card {
+        width: 240px;
+        height: 165px;
+    }
+
+    .marquee-track {
+        gap: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       FORMULARIO
+       ----------------------------------------------------- */
+
+    #contacto {
+        width: 100%;
+        min-height: auto;
+        padding: 55px 15px;
+        background-attachment: scroll;
+    }
+
+    .seccion-formulario {
+        width: 100% !important;
+        min-height: auto;
+        padding: 55px 15px;
+        left: auto;
+        right: auto;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .formulario-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px 18px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       MAPA
+       ----------------------------------------------------- */
+
+    .coverage-section {
+        padding: 55px 15px;
+    }
+
+    .map-container {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+
+
+    /* -----------------------------------------------------
+       COMPARACIÓN
+       ----------------------------------------------------- */
+
+    .comparison-section {
+        padding: 50px 10px;
+        overflow-x: auto;
+    }
+
+    .comparison-table {
+        min-width: 600px;
+        margin: 25px auto;
+    }
+
+
+    /* -----------------------------------------------------
+       CTA FINAL
+       ----------------------------------------------------- */
+
+    .final-cta-section {
+        padding: 60px 18px;
+    }
+
+    .final-cta-section h2 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .final-cta-section p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .btn-whatsapp-large {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       BOTÓN WHATSAPP FLOTANTE
+       ----------------------------------------------------- */
+
+    .whatsapp-fixed {
+        width: 52px;
+        height: 52px;
+        right: 15px;
+        bottom: 15px;
+        font-size: 27px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
+    .main-footer {
+        width: 100%;
+        padding: 45px 18px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .footer-column {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-column h3 {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .about-col p,
+    .links-col ul li a,
+    .contact-col ul li {
+        font-size: 14px;
+    }
+
+    .footer-socials {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 18px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       DVH CARD
+       ----------------------------------------------------- */
+
+    .dvh-dark-section {
+        padding: 50px 15px !important;
+    }
+
+    .dvh-card {
+        width: 100% !important;
+        padding: 25px 20px !important;
+        border-radius: 16px !important;
+    }
+
+    .dvh-card h2 {
+        font-size: 25px !important;
+        line-height: 1.3;
+    }
+
+
+    /* -----------------------------------------------------
+       BOTONES
+       ----------------------------------------------------- */
+
+    .btn-whatsapp-cta {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px;
+        padding: 14px 15px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES MUY CHICOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo img {
+        height: 55px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 4px 5px;
+    }
+
+    .hero-content h1 {
+        font-size: 23px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .section-title h2 {
+        font-size: 22px !important;
+    }
+
+    .floating-card {
+        width: 215px;
+        height: 150px;
+    }
+
+    .btn-main-wa,
+    .btn-whatsapp-large {
+        font-size: 15px;
+    }
+
 }
