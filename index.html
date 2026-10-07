@@ -34,6 +34,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -158,7 +159,6 @@
 <meta property="og:url" content="https://habitatconfortable.com.ar/">
 <meta property="og:type" content="website">
 </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" integrity="sha512-H7N176Q29J4G7m0N24X3lH5QeF2W86J0j72E38dKzQZ4wJkYyE6Wv3vK67r4E4m5E3D78U4U7J5J9U18V7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58N4S3FC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -591,9 +591,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const imagenes = [];
 
-    for (let i = 1; i <= 42; i++) {
+ for (let i = 1; i <= 42; i++) {
         imagenes.push({
-            archivo: `abertura${i}.jpeg`,
+            archivo: `abertura${i}.jpg`, // Usamos .jpg como base; si alguna es .jpeg, el onerror de abajo la corrige sola
             titulo: `Abertura ${i}`
         });
     }
@@ -624,14 +624,16 @@ document.addEventListener("DOMContentLoaded", function () {
         img.alt = imagen.titulo;
         img.loading = "lazy";
 
-        img.onerror = function() {
-            if (img.src.includes(".jpeg")) {
+       img.onerror = function() {
+            if (img.src.endsWith(".jpeg")) {
                 img.src = img.src.replace(".jpeg", ".jpg");
-            } else if (img.src.includes(".jpg")) {
-                img.src = img.src.replace(".jpg", ".png");
+            } else if (img.src.endsWith(".jpg")) {
+                img.src = img.src.replace(".jpg", ".JPG");
+            } else {
+                // Si ninguna extensión funciona, ocultamos la tarjeta para que no quede rota
+                tarjeta.style.display = "none";
             }
         };
-
         const overlay = document.createElement("div");
         overlay.className = "float-overlay";
 

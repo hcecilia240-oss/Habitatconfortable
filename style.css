@@ -853,34 +853,27 @@ body, html {
 
 
 .contenedor-principal {
-    background-image: url('tu-imagen.jpg');
     background-size: cover;        
-    background-position: center;   
+    background-position: center;  
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;                 
-    
-    
+    height: 100vh;                
     display: flex;
-    justify-content: center;       
-    align-items: center;           
+    justify-content: center;      
+    align-items: center;          
 }
 
-
 #contacto {
-    
-    background-image: url('tu-imagen.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/abertura35.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-   
-    display: flex;
-    justify-content: center; 
-    align-items: center;    
-    
-   
     min-height: 100vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
 
 .formulario-card {
@@ -2008,12 +2001,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     margin: 0;
 }
 
-/* Responsivo para celulares: se apilan todas en 1 sola columna */
-@media (max-width: 900px) {
-    .fila-superior,
-    .fila-inferior {
-        grid-template-columns: 1fr;
-        max-width: 100%;
+@media (max-width: 768px) {
+    .contenedor-principal {
+        height: auto !important;          /* Deja que crezca según el contenido */
+        min-height: 100vh !important;     /* Asegura que cubra toda la pantalla como mínimo */
+        padding: 60px 20px !important;    /* Espacio interno para que el texto no pegue a los bordes */
+        box-sizing: border-box !important;
+        flex-direction: column !important;
+        text-align: center !important;
     }
 }
 /* Contenedor del mapa (asegurate de que tu iframe o contenedor tenga esta clase o ID) */
@@ -2775,5 +2770,88 @@ img {
 
     .hero-content h1 {
         font-size: 26px;
+    }
+}
+/* =========================================================
+   CORRECCIÓN PARA QUE NO SE AMONTONE NADA
+   ========================================================= */
+
+@media (max-width: 768px) {
+    /* 1. Ordena el encabezado y el logo para que bajen en columna */
+    header {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 5% !important;
+        gap: 12px !important;
+    }
+
+    .logo {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    .logo img {
+        height: 60px !important;
+    }
+
+    /* 2. Pone los enlaces del menú uno debajo del otro y con espacio cómodo */
+    nav {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 10px !important;
+        align-items: center !important;
+    }
+
+    nav a, 
+    .btn-nav-cotizar, 
+    .btn-nav-wa {
+        margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    /* 3. Asegura que las grillas de productos o tarjetas bajen de a una por renglón */
+    .features-grid,
+    .products-grid,
+    .about-container,
+    .aliados-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+@media (max-width: 768px) {
+    /* Forzar que el contenedor de estas tarjetas no se estire hacia los costados */
+    .dvh-dark-section,
+    .seccion-soluciones, 
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Apilar y centrar cada tarjeta perfectamente */
+    .dvh-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Reducir un poco el título grande para que no se desborde */
+    .dvh-dark-section h2,
+    .soluciones-titulo {
+        font-size: 26px !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
     }
 }
