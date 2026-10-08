@@ -965,26 +965,48 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     color: #25d366; 
 }
 .aliados-section {
-    padding: 80px 8%;
+    padding: 40px 15px;
     background-color: #f8f9fa; 
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Evita que cualquier elemento desborde la pantalla */
+}
+
+.aliados-section h2 {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 24px;                     
+    font-weight: 600;                 
+    color: #2d3748;                     
+    text-transform: uppercase;       
+    letter-spacing: 1.5px;             
+    margin-bottom: 30px;             
     text-align: center;
 }
 
 .aliados-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    /* En celulares usamos 2 columnas para que entren perfecto sin desbordarse */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
     align-items: center;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .aliado-item {
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #ffffff;
+    padding: 15px;
     border-radius: 8px;
-    font-weight: 700;
-    color: #2d3748;
     border: 1px solid #e2e8f0;
+    width: 100%;
+    height: 90px;
+    box-sizing: border-box;
     transition: all 0.3s ease;
 }
 
@@ -994,43 +1016,12 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-.aliados-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    align-items: center;
-    justify-items: center;
-    padding: 20px;
-}
-
 .aliado-item img {
-    max-width: 140px; 
+    max-width: 90px;
+    max-height: 50px;
+    width: auto;
     height: auto;
-    filter: grayscale(100%) opacity(0.7);
-    transition: all 0.3s ease;
-}
-
-.aliado-item:hover img {
-    filter: grayscale(0%) opacity(1); 
-    transform: scale(1.05);
-}
-.aliadosSwiper {
-    padding: 30px 0;
-}
-
-.aliado-item {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-}
-
-.aliado-item img {
-    max-width: 120px;
-    height: auto;
+    object-fit: contain;
     filter: grayscale(100%) opacity(0.7);
     transition: all 0.3s ease;
 }
@@ -1040,15 +1031,111 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     transform: scale(1.05);
 }
 
+/* Para pantallas más grandes (computadoras), volvemos a poner más columnas automáticamente */
+@media (min-width: 768px) {
+    .aliados-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 30px;
+    }
+    .aliados-section {
+        padding: 60px 5%;
+    }
+    .aliado-item {
+        height: 110px;
+    }
+    .aliado-item img {
+        max-width: 120px;
+        max-height: 70px;
+    }
+}
+
+/* Forzamos a que el contenedor de Swiper permita quiebre de línea o se ajuste al celular */
+.swiper-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    transform: none !important; /* Desactiva el desplazamiento horizontal de Swiper en celular */
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.swiper-slide {
+    width: 100% !important;
+    margin-right: 0 !important;
+}
+
+.aliados-section {
+    padding: 40px 15px;
+    background-color: #f8f9fa; 
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
 .aliados-section h2 {
     font-family: 'Poppins', sans-serif; 
-    font-size: 28px;                  
+    font-size: 24px;                     
     font-weight: 600;                 
-    color: #2d3748;                  
+    color: #2d3748;                     
     text-transform: uppercase;       
-    letter-spacing: 2px;             
-    margin-bottom: 40px;             
+    letter-spacing: 1.5px;             
+    margin-bottom: 30px;             
     text-align: center;
+}
+
+.aliado-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    width: 100%;
+    height: 90px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.aliado-item:hover {
+    transform: translateY(-5px);
+    border-color: #25d366; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.aliado-item img {
+    max-width: 90px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease;
+}
+
+.aliado-item:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+/* En computadoras (pantallas grandes), volvemos a activar el comportamiento deseado */
+@media (min-width: 768px) {
+    .swiper-wrapper {
+        display: flex !important; /* Vuelve a ser flexible para la PC */
+    }
+    .swiper-slide {
+        width: auto !important;
+    }
+    .aliados-section {
+        padding: 60px 5%;
+    }
+    .aliado-item {
+        height: 110px;
+    }
+    .aliado-item img {
+        max-width: 120px;
+        max-height: 70px;
+    }
 }
 .btn-nav-cotizar {
     background-color: transparent;
@@ -1495,11 +1582,17 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
     transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
+
 .floating-card img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    object-position: center;
+    transition: none;
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1;
 }
 
 /* Efectos al pasar el mouse por una tarjeta específica */
@@ -2451,47 +2544,7 @@ img {
     }
 
 
-    /* -----------------------------------------------------
-       MARCAS / ALIADOS
-       ----------------------------------------------------- */
-
-    .marcas-section,
-    .aliados-section {
-        padding: 50px 15px;
-    }
-
-    .aliadosSwiper {
-        width: 100%;
-        padding: 15px 0;
-        overflow: hidden;
-    }
-
-    .aliadosSwiper .swiper-slide {
-        width: 100% !important;
-        display: flex;
-        justify-content: center;
-    }
-
-    .aliado-item {
-        width: 150px !important;
-        max-width: 150px !important;
-        height: 90px;
-        padding: 12px;
-        margin: 0 auto;
-    }
-
-    .aliado-item img {
-        max-width: 110px;
-        max-height: 60px;
-        object-fit: contain;
-    }
-
-    .aliados-section h2 {
-        font-size: 23px;
-        letter-spacing: 1px;
-        line-height: 1.3;
-    }
-
+    
 
     /* -----------------------------------------------------
        GALERÍA ANIMADA
@@ -2814,15 +2867,7 @@ img {
         justify-content: center !important;
     }
 
-    /* 3. Asegura que las grillas de productos o tarjetas bajen de a una por renglón */
-    .features-grid,
-    .products-grid,
-    .about-container,
-    .aliados-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-    }
-}
+
 @media (max-width: 768px) {
     /* Forzar que el contenedor de estas tarjetas no se estire hacia los costados */
     .dvh-dark-section,
@@ -2855,3 +2900,173 @@ img {
         word-wrap: break-word !important;
     }
 }
+/* =========================================================
+   SOLUCIÓN DEFINITIVA - SECCIÓN SOLUCIONES EN CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Evitar desplazamiento horizontal */
+    html,
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Sección completa */
+    .products-section-dark {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Contenedor interno */
+    .products-section-dark .contenido-contenedor {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Título */
+    .products-section-dark .section-title-dark {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .products-section-dark .section-title-dark h2 {
+        font-size: 30px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+    }
+
+    .products-section-dark .section-title-dark p {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+    }
+
+    /* Contenedor general */
+    .products-grid-dark {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Las dos filas pasan a una sola columna */
+    .products-grid-dark .fila-tarjetas {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Cada tarjeta ocupa solamente el ancho disponible */
+    .products-grid-dark .product-card-dark {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+
+}
+
+
+/* Mejorar la claridad de las imágenes en celulares */
+@media screen and (max-width: 768px) {
+    .image-badge {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(0, 0, 0, 0.85);
+    }
+}
+
+/* =====================================
+   CORRECCIÓN DE NITIDEZ EN CELULARES
+   HÁBITAT CONFORTABLE
+   ===================================== */
+
+@media screen and (max-width: 768px) {
+
+    .gallery-animated-section,
+    .gallery-animated-section .marquee-container {
+        overflow: hidden;
+    }
+
+    .gallery-animated-section .floating-card {
+        position: relative;
+        flex-shrink: 0;
+        overflow: hidden;
+        filter: none !important;
+        -webkit-filter: none !important;
+        opacity: 1 !important;
+        transform: none;
+    }
+
+    .gallery-animated-section .floating-card img {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        filter: none !important;
+        -webkit-filter: none !important;
+        opacity: 1 !important;
+        image-rendering: auto;
+    }
+
+    .gallery-animated-section .floating-card::before,
+    .gallery-animated-section .floating-card::after {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+}
+
+/* Mejorar la nitidez durante el movimiento en celulares */
+@media screen and (max-width: 768px) {
+
+    .gallery-animated-section .marquee-track {
+        will-change: auto;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .gallery-animated-section .floating-card {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .gallery-animated-section .floating-card img {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transition: none !important;
+    }
+.contenedor-marcas {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+}
+
+/* --- CONTENEDOR GENERAL DE LA GALERÍA --- */
+.experiencia-section, 
+.galeria-aberturas {
+    padding: 40px 5%;
+    background-color: #f8f9fa;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Evita que las tarjetas rompan la pantalla */
+}
+
