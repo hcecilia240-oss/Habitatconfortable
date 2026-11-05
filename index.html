@@ -7,9 +7,9 @@
     <title>Aberturas de Aluminio y PVC en Canning | Hábitat Confortable</title>
     <meta name="description" content="Fábrica de aberturas de aluminio y PVC a medida en Canning. Ventanas DVH de alta prestación, cerramientos e instalación profesional. Cotizá tu obra hoy.">
  
-    <!-- FAVICON: provisorio con el logo. Reemplazar por un favicon cuadrado propio (ver notas) -->
-    <link rel="icon" type="image/png" href="/assets/logohabitat.png">
-    <link rel="apple-touch-icon" href="/assets/logohabitat.png">
+    
+    <link rel="icon" type="image/png" href="assets/logohabitat(1).png">
+<link rel="apple-touch-icon" href="assets/logohabitat(1).png">
  
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -43,8 +43,6 @@
  
     <!-- ESTILOS DE LOS ELEMENTOS NUEVOS (microfrase, cards con link, reseñas, FAQ) -->
     <style>
-    /* Más específico que ".hero-content p" del style.css, que si no lo pisa (17px y margen inferior) */
-    .hero-content .cta-micro { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, 0.85); }
     .cta-wrap { text-align: center; margin-top: 40px; }
  
     /* "Una fábrica que no terceriza": ícono arriba, ahora que cada tarjeta tiene descripción */
@@ -79,17 +77,16 @@
     .review-shot:hover { transform: translateY(-6px); box-shadow: 0 16px 35px rgba(0, 0, 0, 0.14); }
     .review-shot img { display: block; width: 100%; height: auto; }
  
+    /* Reseñas en texto real (se usa cuando se descomenta el bloque .reviews-text más abajo) */
+    .reviews-text { max-width: 700px; margin: 32px auto 0; }
+    .reviews-text blockquote { margin: 0 0 20px; padding: 20px 24px; background: #fff; border-radius: 16px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); text-align: left; }
+    .reviews-text blockquote p { margin: 0 0 10px; font-size: 16px; line-height: 1.7; color: #4b5563; }
+    .reviews-text blockquote footer { font-size: 14px; font-weight: 600; color: #1f2937; }
+ 
     .reviews-link { display: inline-block; margin-top: 28px; font-weight: 600; color: #1f2937; text-decoration: underline; text-underline-offset: 3px; }
  
     .faq-section { padding: 80px 20px; background: #ffffff; border-top: 1px solid #e5e7eb; }
     .faq-section h2 { text-align: center; margin-bottom: 36px; }
-    .faq-item { border-bottom: 1px solid #e5e7eb; }
-    .faq-item summary { position: relative; cursor: pointer; list-style: none; padding: 20px 40px 20px 0; font-size: 18px; font-weight: 600; color: #1f2937; }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: "+"; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 24px; font-weight: 400; }
-    .faq-item[open] summary::after { content: "–"; }
-    .faq-answer { padding: 0 0 22px; font-size: 16px; line-height: 1.7; color: #4b5563; }
-    .faq-answer p { margin: 0; }
  
     @media (max-width: 900px) {
         .reviews-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
@@ -103,120 +100,116 @@
     @media (max-width: 600px) {
         .reviews-section, .faq-section { padding: 50px 20px; }
         .reviews-section h2, .faq-section h2 { font-size: 29px; line-height: 1.2; }
-        .faq-item summary { font-size: 16px; }
     }
     </style>
  
+<!-- Schema de la HOME. Reemplaza a los DOS bloques JSON-LD anteriores (HomeAndConstructionBusiness y FAQPage).
+     IMPORTANTE: el FAQPage debe coincidir PALABRA POR PALABRA con la sección #preguntas-frecuentes del body. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "@id": "https://habitatconfortable.com.ar/#business",
-  "name": "Hábitat Confortable",
-  "alternateName": "Hábitat Confortable - Fábrica de Aberturas",
-  "description": "Fábrica de aberturas de aluminio y PVC a medida en Canning. Ventanas DVH de alta prestación, cerramientos, puertas e instalación profesional.",
-  "image": "https://habitatconfortable.com.ar/assets/logohabitat(1).png",
-  "logo": "https://habitatconfortable.com.ar/assets/logohabitat.png",
-  "url": "https://habitatconfortable.com.ar/",
-  "telephone": "+5491139352271",
-  "priceRange": "$$",
-  "currenciesAccepted": "ARS",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Marinone 1580, Oficina 2",
-    "addressLocality": "Canning",
-    "addressRegion": "Buenos Aires",
-    "postalCode": "1804",
-    "addressCountry": "AR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -34.8595049,
-    "longitude": -58.5022333
-  },
-  "hasMap": "https://maps.app.goo.gl/oRB8fnyXVcPp5wda8",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  },
-  "sameAs": [
-    "https://www.instagram.com/habitat.confortable/",
-    "https://www.facebook.com/profile.php?id=61588542253901"
-  ],
-  "areaServed": [
-    { "@type": "Place", "name": "Canning" },
-    { "@type": "Place", "name": "Monte Grande" },
-    { "@type": "Place", "name": "Ezeiza" },
-    { "@type": "Place", "name": "Esteban Echeverría" },
-    { "@type": "Place", "name": "San Vicente" },
-    { "@type": "Place", "name": "Luis Guillón" },
-    { "@type": "Place", "name": "Tristán Suárez" },
-    { "@type": "Place", "name": "Carlos Spegazzini" },
-    { "@type": "Place", "name": "Capital Federal" },
-    { "@type": "Place", "name": "Zona Norte GBA" },
-    { "@type": "Place", "name": "Zona Sur GBA" }
-  ],
-  "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ventanas de aluminio a medida" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aberturas de PVC" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ventanas DVH de doble vidriado hermético" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cerramientos de aluminio" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Puertas exteriores e interiores" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Frentes integrales y piel de vidrio" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Barandas de balcón" } }
-  ]
-}
-</script>
- 
-<!-- IMPORTANTE: este FAQPage debe coincidir PALABRA POR PALABRA con la sección #preguntas-frecuentes del body.
-     Si cambiás una pregunta o respuesta en un lado, cambiala igual en el otro. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://habitatconfortable.com.ar/#faq",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "¿Vienen a mi obra a tomar las medidas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Coordinamos una visita para medir en el lugar y asesorarte sobre la línea y el material que le conviene a cada abertura. Así el presupuesto sale de medidas reales, no de un cálculo a ojo, y la abertura llega para entrar justa."
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://habitatconfortable.com.ar/#business",
+      "name": "Hábitat Confortable",
+      "alternateName": "Hábitat Confortable - Fábrica de Aberturas",
+      "description": "Fábrica de aberturas en Canning. Fabricamos en nuestra planta aberturas de aluminio, PVC y DVH a medida, y las instalamos con equipo propio en zona sur, Capital Federal y zona norte.",
+      "url": "https://habitatconfortable.com.ar/",
+      "logo": "https://habitatconfortable.com.ar/assets/logohabitat%281%29.png",
+      "image": "https://habitatconfortable.com.ar/assets/logohabitat%281%29.png",
+      "telephone": "+54 9 11 3935-2271",
+      "priceRange": "$$",
+      "currenciesAccepted": "ARS",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mariano Castex 1250",
+        "addressLocality": "Canning",
+        "addressRegion": "Provincia de Buenos Aires",
+        "postalCode": "1804",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.8595049,
+        "longitude": -58.5022333
+      },
+      "hasMap": "https://maps.app.goo.gl/oRB8fnyXVcPp5wda8",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://maps.app.goo.gl/oRB8fnyXVcPp5wda8",
+        "https://www.instagram.com/habitat.confortable/",
+        "https://www.facebook.com/profile.php?id=61588542253901"
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Canning" },
+        { "@type": "City", "name": "Monte Grande" },
+        { "@type": "City", "name": "Ezeiza" },
+        { "@type": "AdministrativeArea", "name": "Esteban Echeverría" },
+        { "@type": "AdministrativeArea", "name": "San Vicente" },
+        { "@type": "City", "name": "Luis Guillón" },
+        { "@type": "City", "name": "Tristán Suárez" },
+        { "@type": "City", "name": "Carlos Spegazzini" },
+        { "@type": "City", "name": "Ciudad Autónoma de Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Zona Norte del Gran Buenos Aires" }
+      ],
+      "knowsAbout": [
+        "Aberturas de aluminio",
+        "Aberturas de PVC",
+        "Doble vidriado hermético (DVH)",
+        "Cerramientos de aluminio",
+        "Puertas corredizas de vidrio"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Aberturas a medida",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ventanas de aluminio", "description": "Marcos finos, terminaciones prolijas y la resistencia del aluminio, también en versión corrediza.", "url": "https://habitatconfortable.com.ar/aberturas-de-aluminio-y-pvc#ventanas-de-aluminio" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aberturas de aluminio líneas Modena y A30", "description": "Dos líneas de aluminio para distintos proyectos y presupuestos.", "url": "https://habitatconfortable.com.ar/aberturas-de-aluminio-y-pvc#lineas-modena-a30" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aberturas de PVC", "description": "La opción más aislante para el frío, el calor y el ruido.", "url": "https://habitatconfortable.com.ar/aberturas-de-aluminio-y-pvc#aberturas-de-pvc" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DVH (doble vidriado hermético)", "description": "Dos vidrios con una cámara de aire en el medio que aíslan del frío y del ruido.", "url": "https://habitatconfortable.com.ar/aberturas-de-aluminio-y-pvc#dvh" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cerramientos de aluminio", "description": "Cerramientos para balcones, galerías y patios.", "url": "https://habitatconfortable.com.ar/aberturas-de-aluminio-y-pvc#cerramientos" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Puertas corredizas de vidrio", "description": "Grandes paños que integran el interior con el jardín.", "url": "https://habitatconfortable.com.ar/aberturas-de-aluminio-y-pvc#puertas-corredizas-de-vidrio" } }
+        ]
       }
     },
     {
-      "@type": "Question",
-      "name": "¿Todas las aberturas se fabrican a medida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Fabricamos cada abertura en nuestra planta de Canning según las medidas de tu obra: ventanas de aluminio en líneas Modena y A30, cerramientos, puertas corredizas de vidrio, DVH y también aberturas de PVC. No adaptamos medidas estándar, para que no termines forzando una abertura donde no entra bien."
-      }
+      "@type": "WebSite",
+      "@id": "https://habitatconfortable.com.ar/#website",
+      "url": "https://habitatconfortable.com.ar/",
+      "name": "Hábitat Confortable",
+      "inLanguage": "es-AR",
+      "publisher": { "@id": "https://habitatconfortable.com.ar/#business" }
     },
     {
-      "@type": "Question",
-      "name": "Busco aberturas cerca de mí, ¿qué zonas cubren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nuestra fábrica está en Canning y en zona sur llegamos a Canning, Monte Grande, Ezeiza, Esteban Echeverría, San Vicente, Luis Guillón, Tristán Suárez y Carlos Spegazzini. También hacemos obras en Capital Federal y zona norte. Escribinos con tu localidad y coordinamos la visita."
-      }
+      "@type": "WebPage",
+      "@id": "https://habitatconfortable.com.ar/#webpage",
+      "url": "https://habitatconfortable.com.ar/",
+      "name": "Fábrica de aberturas en Canning: aluminio y PVC a medida",
+      "inLanguage": "es-AR",
+      "isPartOf": { "@id": "https://habitatconfortable.com.ar/#website" },
+      "about": { "@id": "https://habitatconfortable.com.ar/#business" }
     },
     {
-      "@type": "Question",
-      "name": "¿Qué me conviene más, aluminio o PVC?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Para la mayoría de las casas recomendamos aluminio con DVH: marcos más finos que dejan entrar más luz, paños grandes, mucha resistencia y una aislación que se siente desde el primer invierno. El PVC aísla más, por eso lo sugerimos en ambientes puntuales, como un dormitorio sobre una avenida. En la visita te recomendamos el material para cada ambiente."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo retirar mi pedido en la fábrica?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, con cita previa. Coordinamos el día y el horario por WhatsApp para que tu pedido esté listo cuando llegues y no tengas que esperar."
-      }
+      "@type": "FAQPage",
+      "@id": "https://habitatconfortable.com.ar/#faq",
+      "url": "https://habitatconfortable.com.ar/",
+      "inLanguage": "es-AR",
+      "isPartOf": { "@id": "https://habitatconfortable.com.ar/#webpage" },
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Vienen a mi obra a tomar las medidas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Coordinamos una visita para medir en el lugar y asesorarte sobre la línea y el material que le conviene a cada abertura. Así el presupuesto sale de medidas reales, no de un cálculo a ojo, y la abertura llega para entrar justa." } },
+        { "@type": "Question", "name": "¿Todas las aberturas se fabrican a medida?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Fabricamos cada abertura en nuestra planta de Canning según las medidas de tu obra: ventanas de aluminio en líneas Modena y A30, cerramientos, puertas corredizas de vidrio, DVH y también aberturas de PVC. No adaptamos medidas estándar, para que no termines forzando una abertura donde no entra bien." } },
+        { "@type": "Question", "name": "Busco aberturas cerca de mí, ¿qué zonas cubren?", "acceptedAnswer": { "@type": "Answer", "text": "Nuestra fábrica está en Canning y en zona sur llegamos a Canning, Monte Grande, Ezeiza, Esteban Echeverría, San Vicente, Luis Guillón, Tristán Suárez y Carlos Spegazzini. También hacemos obras en Capital Federal y zona norte. Escribinos con tu localidad y coordinamos la visita." } },
+        { "@type": "Question", "name": "¿Qué me conviene más, aluminio o PVC?", "acceptedAnswer": { "@type": "Answer", "text": "Para la mayoría de las casas recomendamos aluminio con DVH: marcos más finos que dejan entrar más luz, paños grandes, mucha resistencia y una aislación que se siente desde el primer invierno. El PVC aísla más, por eso lo sugerimos en ambientes puntuales, como un dormitorio sobre una avenida. En la visita te recomendamos el material para cada ambiente." } },
+        { "@type": "Question", "name": "¿Puedo retirar mi pedido en la fábrica?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, con cita previa. Coordinamos el día y el horario por WhatsApp para que tu pedido esté listo cuando llegues y no tengas que esperar." } }
+      ]
     }
   ]
 }
@@ -226,7 +219,7 @@
  
 <meta property="og:title" content="Aberturas de Aluminio y PVC en Canning | Hábitat Confortable">
 <meta property="og:description" content="Fábrica de aberturas de aluminio y PVC a medida en Canning. Ventanas DVH, cerramientos e instalación profesional.">
-<meta property="og:image" content="https://habitatconfortable.com.ar/assets/logohabitat.png">
+<meta property="og:image" content="https://habitatconfortable.com.ar/assets/logohabitat%281%29.png">
 <meta property="og:url" content="https://habitatconfortable.com.ar/">
 <meta property="og:type" content="website">
 </head>
@@ -235,11 +228,12 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header>
         <div class="logo">
-            <img src="assets/logohabitat(1).png" alt="Habitat Confortable Logo">
+          <img src="assets/logohabitat(1).png" alt="Habitat Confortable Logo">
         </div>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#nosotros">Quiénes Somos</a>
+            <a href="/aberturas-de-aluminio-y-pvc">Servicios</a>
             <a href="#elegirnos-aberturas">Por qué elegirnos</a>
             <a href="#galeria">Galería</a>
             <a href="#cobertura" class="btn-nav-cotizar">Cotizar</a>
@@ -259,7 +253,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="fade-in-up delay-3">Pensá en el último invierno: la estufa prendida todo el día y, aun así, frío cerca de la ventana. Cada temporada con las aberturas de siempre es plata que se escapa por una rendija que nadie ve. Y el calor del verano entra por el mismo lugar.</p>
         </div>
         <!-- CTA 1 -->
-        <a href="https://wa.me/5491139352271?text=Hola%2C%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20aberturas" class="btn-main-wa fade-in-up delay-4" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/5491139352271?text=Hola%2C%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20aberturas" class="btn-main-wa fade-in-up delay-4" data-cta="home_hero" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp"></i> Contanos qué necesitás →
         </a>
         <p class="cta-micro fade-in-up delay-4">Te respondemos por WhatsApp y coordinamos la visita para medir tu obra.</p>
@@ -358,7 +352,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
         <!-- CTA 2 -->
         <div class="cta-wrap">
-            <a href="https://wa.me/5491139352271?text=Hola%2C%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20aberturas" class="btn-main-wa" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5491139352271?text=Hola%2C%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20aberturas" class="btn-main-wa" data-cta="home_asesoramiento" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-whatsapp"></i> Quiero asesorarme sobre mi obra →
             </a>
         </div>
@@ -417,15 +411,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="product-icon-dark"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
                     <h3>Puertas corredizas de vidrio</h3>
                     <p>Grandes paños que integran el interior con el jardín y llenan la casa de luz, sin corrientes de aire.</p>
-                    <a class="product-link" href="/aberturas-de-aluminio-y-pvc#puertas-corredizas">Ver puertas corredizas →</a>
+                    <a class="product-link" href="/aberturas-de-aluminio-y-pvc#puertas-corredizas-de-vidrio">Ver puertas corredizas →</a>
                 </div>
  
+                <!-- VIDRIERÍA: descomentar esta tarjeta cuando exista /vidrieria-canning
                 <div class="product-card-dark">
                     <div class="product-icon-dark"><i class="fa-solid fa-gem"></i></div>
                     <h3>Vidriería</h3>
                     <p>Vidrios a medida para tu casa o tu obra, con el mismo cuidado que ponemos en cada abertura.</p>
                     <a class="product-link" href="/vidrieria-canning">Ver vidriería →</a>
                 </div>
+                -->
  
             </div>
         </div>
@@ -649,33 +645,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 }
  
-/* ESTILOS PARA EL BOTÓN FLOTANTE DE WHATSAPP */
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
- 
-.whatsapp-float:hover {
-    background-color: #20ba5a;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-    color: #FFF;
-}
 </style>
  
  
@@ -726,6 +695,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tarjeta.target = "_blank";
         tarjeta.rel = "noopener noreferrer";
         tarjeta.className = "floating-card";
+        tarjeta.setAttribute("data-cta", "home_galeria");
  
         // Orden de intentos: la extensión esperada primero y después el resto
         const intentos = [imagen.ext].concat(todasLasExt.filter(function (e) { return e !== imagen.ext; }));
@@ -780,7 +750,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarPista("gallery-track-2", grupo2);
 });
 </script>
-
+ 
 <section id="resenas" class="reviews-section">
     <div class="reviews-inner">
         <h2>Lo que dicen nuestros clientes en Google</h2>
@@ -791,24 +761,34 @@ document.addEventListener("DOMContentLoaded", function () {
             <span>5.0 en Google · 38 reseñas</span>
         </div>
  
+        <!-- PENDIENTE: agregar width="ANCHO" height="ALTO" (en px) a cada imagen para evitar saltos de diseño al cargar -->
         <div class="reviews-grid">
             <figure class="review-shot">
-                <img src="assets/reseña1.jpg" alt="Reseña de 5 estrellas de Mariano Gueli en Google sobre Hábitat Confortable" loading="lazy">
+                <img src="assets/resena1.jpg" alt="Reseña de 5 estrellas de Mariano Gueli en Google sobre Hábitat Confortable" loading="lazy">
             </figure>
             <figure class="review-shot">
-                <img src="assets/reseña2.jpg" alt="Reseña de 5 estrellas de Karina Corsi en Google sobre Hábitat Confortable" loading="lazy">
+                <img src="assets/resena2.jpg" alt="Reseña de 5 estrellas de Karina Corsi en Google sobre Hábitat Confortable" loading="lazy">
             </figure>
             <figure class="review-shot">
-                <img src="assets/reseña3.jpg" alt="Reseña de 5 estrellas de Diego Pelusso en Google sobre Hábitat Confortable" loading="lazy">
+                <img src="assets/resena3.jpg" alt="Reseña de 5 estrellas de Diego Pelusso en Google sobre Hábitat Confortable" loading="lazy">
             </figure>
         </div>
  
-        
+        <!-- PENDIENTE: reseñas en texto real (Google no lee el texto de las capturas).
+             Completar con el texto literal y el nombre como figura en Google, y descomentar:
+        <div class="reviews-text">
+            <blockquote>
+                <p>TEXTO LITERAL DE LA RESEÑA</p>
+                <footer>— Nombre como figura en Google</footer>
+            </blockquote>
+        </div>
+        -->
+ 
         <a class="reviews-link" href="https://maps.app.goo.gl/oRB8fnyXVcPp5wda8" target="_blank" rel="noopener noreferrer">Ver todas las reseñas en Google →</a>
     </div>
 </section>
  
-
+ 
     <section class="aliados-section">
         <h2>Nuestras marcas aliadas</h2>
         <div class="swiper aliadosSwiper">
@@ -845,7 +825,9 @@ document.addEventListener("DOMContentLoaded", function () {
         <details class="faq-item">
             <summary>¿Qué me conviene más, aluminio o PVC?</summary>
             <div class="faq-answer"><p>Para la mayoría de las casas recomendamos aluminio con DVH: marcos más finos que dejan entrar más luz, paños grandes, mucha resistencia y una aislación que se siente desde el primer invierno. El PVC aísla más, por eso lo sugerimos en ambientes puntuales, como un dormitorio sobre una avenida. En la visita te recomendamos el material para cada ambiente.</p>
-          
+            <!-- PENDIENTE: enlace al artículo #6 del blog (aluminio vs. PVC). Reemplazar URL-DEL-ARTICULO-6 y descomentar:
+            <p><a href="URL-DEL-ARTICULO-6">Leer más: aluminio vs. PVC →</a></p>
+            -->
             </div>
         </details>
  
@@ -870,7 +852,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="coverage-cta" style="text-align: center; margin: 30px 0;">
             <p style="font-size: 18px; font-weight: 500; color: #1f2937; margin-bottom: 15px;">¿Coordinamos la visita a tu obra esta semana o preferís la que viene?</p>
           
-            <a href="https://wa.me/5491139352271?text=Hola%2C%20vi%20el%20sitio%20web%20y%20quiero%20coordinar%20visita" class="btn-main-wa" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5491139352271?text=Hola%2C%20vi%20el%20sitio%20web%20y%20quiero%20coordinar%20visita" class="btn-main-wa" data-cta="home_visita" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-whatsapp"></i> Coordinar visita a obra →
             </a>
             <p style="margin-top: 14px; font-size: 14px; color: #4b5563;">Tu casa templada y silenciosa empieza con una visita de medición.</p>
@@ -896,7 +878,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <!-- Columna 1: Info / Socials -->
             <div class="footer-column about-col">
                 <div class="footer-logo">
-                    <img src="assets/logohabitat.png" alt="Habitat Confortable Logo">
+                    <img src="assets/logohabitat(1).png" alt="Habitat Confortable Logo">
                 </div>
                 <p>Fabricación, venta e instalación de aberturas de alta prestación. Aportamos calidad, diseño, confort y durabilidad a cada uno de tus ambientes.</p>
  
@@ -916,6 +898,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <ul>
                     <li><a href="#inicio"><i class="fa-solid fa-chevron-right"></i> Inicio</a></li>
                     <li><a href="#nosotros"><i class="fa-solid fa-chevron-right"></i> Quiénes Somos</a></li>
+                    <li><a href="/aberturas-de-aluminio-y-pvc"><i class="fa-solid fa-chevron-right"></i> Servicios</a></li>
                     <li><a href="#elegirnos-aberturas"><i class="fa-solid fa-chevron-right"></i> Por qué elegirnos</a></li>
                     <li><a href="#galeria"><i class="fa-solid fa-chevron-right"></i> Galería</a></li>
                 </ul>
@@ -926,6 +909,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Contacto</h3>
                 <ul>
                     <li>
+                        <!-- PENDIENTE: unificar dirección. El schema dice "Marinone 1580, Oficina 2" y acá figura "Mariano Castex 1250".
+                             Si son lugares distintos, aclararlo (oficina / fábrica). Si es el mismo, usar la misma dirección y el mismo enlace de Maps en todos lados. -->
                         <a href="https://maps.app.goo.gl/GKNmkA3rWffdEVEf7" target="_blank" rel="noopener noreferrer">
                             <i class="fa-solid fa-location-dot" style="margin-top: 4px;"></i>
                             <span>
@@ -966,8 +951,8 @@ document.addEventListener("DOMContentLoaded", function () {
     </footer>
  
    
-
-    <a href="https://wa.me/5491139352271?text=Hola%2C%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20aberturas" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Consultar por WhatsApp" aria-label="Consultar por WhatsApp">
+ 
+    <a href="https://wa.me/5491139352271?text=Hola%2C%20vi%20el%20sitio%20web%20y%20quiero%20cotizar%20aberturas" class="whatsapp-float" data-cta="home_flotante" target="_blank" rel="noopener noreferrer" title="Consultar por WhatsApp" aria-label="Consultar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
  
@@ -1006,6 +991,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     </script>
+    <script src="tracking.js" defer></script>
 </body>
 </html>
- 
