@@ -130,7 +130,7 @@
   "currenciesAccepted": "ARS",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Marinone 1580, Oficina 2",
+    "streetAddress": "Mariano Castex 1250",
     "addressLocality": "Canning",
     "addressRegion": "Buenos Aires",
     "postalCode": "1804",
@@ -682,6 +682,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 </style>
 
+<!-- AJUSTES DE LA GALERÍA: van después del <style> de arriba y con más especificidad para pisar el style.css
+     (que dejaba un panel con desenfoque sobre cada foto, degradés casi negros en los costados y tarjetas pesadas). -->
+<style>
+/* Título siempre visible */
+.gallery-animated-section .section-title h2 { color: #1f2937 !important; }
+
+/* Degradés de los costados: blancos, como el fondo de la sección */
+.gallery-animated-section .marquee-container::before,
+.gallery-animated-section .marquee-container::after { width: 70px; }
+.gallery-animated-section .marquee-container::before { background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0)); }
+.gallery-animated-section .marquee-container::after { background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)); }
+
+/* Tarjetas: formato vertical (las fotos de obra son de celular) y la foto llena la tarjeta */
+.gallery-animated-section .floating-card { width: 240px; height: 300px; border: 0; background: #e5e7eb; will-change: auto; }
+.gallery-animated-section .floating-card img { object-fit: cover; object-position: center; }
+.gallery-animated-section .floating-card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18); }
+.gallery-animated-section .floating-card:hover img { transform: scale(1.05); }
+
+/* Botón "Consultar": sin desenfoque y sin tapar toda la foto, solo una franja abajo */
+.gallery-animated-section .floating-card .float-overlay {
+    inset: auto 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 40px 12px 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.gallery-animated-section .floating-card:hover .float-overlay { opacity: 1; transform: none; }
+.gallery-animated-section .floating-card .float-overlay span { padding: 8px 18px; font-size: 14px; box-shadow: none; transform: none; }
+
+/* Pantallas táctiles (no hay "hover"): el botón se ve siempre, chico y discreto */
+@media (hover: none) {
+    .gallery-animated-section .floating-card .float-overlay { opacity: 1; transform: none; padding-top: 30px; }
+    .gallery-animated-section .floating-card .float-overlay span { padding: 6px 14px; font-size: 13px; }
+}
+
+@media (max-width: 900px) { .gallery-animated-section .floating-card { width: 210px; height: 265px; } }
+@media (max-width: 600px) { .gallery-animated-section .floating-card { width: 175px; height: 225px; } }
+
+/* Cinta quieta cuando la galería no está en pantalla */
+.gallery-animated-section.fuera-de-pantalla .marquee-track { animation-play-state: paused; }
+</style>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -689,7 +737,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // RÓTULOS REALES: producto · localidad. La clave es el nombre del archivo sin extensión.
     // Ejemplo: "abertura1": "Cerramiento de aluminio · Monte Grande",
-    // Las fotos que no tengan rótulo muestran "Abertura N" hasta que lo completes.
+    // Las fotos sin rótulo muestran un botón "Consultar" (sin texto de producto) hasta que lo completes.
     const rotulos = {
         // "abertura1": "Cerramiento de aluminio · Monte Grande",
         // "abertura2": "Ventanas con DVH · Ezeiza",
@@ -698,17 +746,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const imagenes = [];
 
+    // "ext" es la extensión que se prueba primero; si no existe, se prueban las demás (ver onerror más abajo)
     for (let i = 1; i <= 42; i++) {
         imagenes.push({
-            archivo: `abertura${i}.jpg`, // Usamos .jpg como base; si alguna es .jpeg, el onerror de abajo la corrige sola
-            titulo: rotulos[`abertura${i}`] || `Abertura ${i}`
+            base: `abertura${i}`,
+            ext: ".jpg",
+            titulo: rotulos[`abertura${i}`] || "Trabajo realizado por Hábitat Confortable",
+            rotulado: !!rotulos[`abertura${i}`]
         });
     }
 
     for (let i = 1; i <= 3; i++) {
         imagenes.push({
-            archivo: `puerta${i}.jpeg`,
-            titulo: rotulos[`puerta${i}`] || `Puerta ${i}`
+            base: `puerta${i}`,
+            ext: ".jpeg",
+            titulo: rotulos[`puerta${i}`] || "Trabajo realizado por Hábitat Confortable",
+            rotulado: !!rotulos[`puerta${i}`]
         });
     }
 
@@ -719,23 +772,30 @@ document.addEventListener("DOMContentLoaded", function () {
     function crearTarjeta(imagen) {
         const tarjeta = document.createElement("a");
 
-        const mensaje = `Hola Habitat Confortable! Vi "${imagen.titulo}" en la galería y quiero consultar por presupuesto.`;
+        const mensaje = imagen.rotulado
+            ? `Hola Habitat Confortable! Vi "${imagen.titulo}" en la galería y quiero consultar por presupuesto.`
+            : "Hola Habitat Confortable! Vi un trabajo en la galería de la web y quiero consultar por presupuesto.";
         tarjeta.href = "https://wa.me/5491139352271?text=" + encodeURIComponent(mensaje);
 
         tarjeta.target = "_blank";
         tarjeta.rel = "noopener noreferrer";
         tarjeta.className = "floating-card";
 
+        // Prueba la extensión indicada y, si falla, las demás (GitHub Pages distingue mayúsculas y minúsculas)
+        const extensiones = [imagen.ext, ".jpg", ".jpeg", ".JPG", ".JPEG", ".png", ".webp"]
+            .filter(function (e, i, a) { return a.indexOf(e) === i; });
+        let intento = 0;
+
         const img = document.createElement("img");
-        img.src = ruta + imagen.archivo;
+        img.src = ruta + imagen.base + extensiones[0];
         img.alt = imagen.titulo;
         img.loading = "lazy";
+        img.decoding = "async";
 
         img.onerror = function() {
-            if (img.src.endsWith(".jpeg")) {
-                img.src = img.src.replace(".jpeg", ".jpg");
-            } else if (img.src.endsWith(".jpg")) {
-                img.src = img.src.replace(".jpg", ".JPG");
+            intento++;
+            if (intento < extensiones.length) {
+                img.src = ruta + imagen.base + extensiones[intento];
             } else {
                 // Si ninguna extensión funciona, ocultamos la tarjeta para que no quede rota
                 tarjeta.style.display = "none";
@@ -745,7 +805,14 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.className = "float-overlay";
 
         const texto = document.createElement("span");
-        texto.textContent = imagen.titulo + " 💬";
+        if (imagen.rotulado) {
+            texto.textContent = imagen.titulo + " 💬";
+        } else {
+            const icono = document.createElement("i");
+            icono.className = "fab fa-whatsapp";
+            texto.appendChild(icono);
+            texto.appendChild(document.createTextNode(" Consultar"));
+        }
 
         overlay.appendChild(texto);
         tarjeta.appendChild(img);
@@ -771,6 +838,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cargarPista("gallery-track-1", grupo1);
     cargarPista("gallery-track-2", grupo2);
+
+    // La cinta solo se anima mientras la galería está en pantalla (menos carga al scrollear el resto de la página)
+    const seccionGaleria = document.getElementById("galeria");
+    if (seccionGaleria && "IntersectionObserver" in window) {
+        new IntersectionObserver(function (entradas) {
+            seccionGaleria.classList.toggle("fuera-de-pantalla", !entradas[0].isIntersecting);
+        }).observe(seccionGaleria);
+    }
 });
 </script>
 
