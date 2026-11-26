@@ -43,6 +43,9 @@
 
     <!-- ESTILOS DE LOS ELEMENTOS NUEVOS (microfrase, cards con link, reseñas, FAQ) -->
     <style>
+    /* El logo del header es un link a la home: sin espacio extra debajo de la imagen */
+    header .logo a { display: block; line-height: 0; }
+
     /* Los links del menú caen justo debajo del header fijo */
     section[id] { scroll-margin-top: 110px; }
 
@@ -242,7 +245,9 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header>
         <div class="logo">
-            <img src="assets/logohabitat(1).png" alt="Habitat Confortable Logo">
+            <a href="/" aria-label="Hábitat Confortable - Ir al inicio">
+                <img src="assets/logohabitat(1).png" alt="Habitat Confortable Logo">
+            </a>
         </div>
         <nav>
             <a href="#inicio">Inicio</a>
