@@ -95,6 +95,17 @@
         .products-grid-7 .product-card-dark { flex: 1 1 100%; min-width: 0; }
     }
 
+    /* HEADER COMPACTO EN CELULAR: pisa las reglas apiladas del style.css (que dejaban el header en ~360px de alto).
+       Queda de ~110px, con los links en filas y sin ser fijo, para no tapar contenido ni títulos al navegar. */
+    @media (max-width: 768px) {
+        header { position: static !important; flex-direction: column !important; padding: 8px 4% 10px !important; gap: 6px !important; }
+        header .logo img { height: 44px !important; max-width: 150px !important; }
+        header nav { display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; gap: 2px 4px !important; width: 100% !important; }
+        header nav a { width: auto !important; max-width: none !important; margin: 0 !important; padding: 6px 8px !important; font-size: 13px !important; }
+        header nav a.btn-nav-cotizar { width: auto !important; max-width: none !important; padding: 6px 16px !important; margin-left: 4px !important; }
+        section[id] { scroll-margin-top: 12px; }
+    }
+
     @media (max-width: 600px) {
         .reviews-section, .faq-section { padding: 50px 20px; }
         .reviews-section h2, .faq-section h2 { font-size: 29px; line-height: 1.2; }
